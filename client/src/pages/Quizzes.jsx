@@ -62,7 +62,7 @@ const Quizzes = () => {
             >
               <option value="">All Difficulties</option>
               <option value="Easy">Easy</option>
-              <option value="Medium">Medium</option>
+              <option value="Intermediate">Intermediate</option>
               <option value="Hard">Hard</option>
             </select>
             <Btn text="Reset" onClick={() => setSelectedDifficulty("")} />
