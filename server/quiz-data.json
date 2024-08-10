@@ -1,0 +1,361 @@
+[
+  {
+    "title": "JavaScript Basics Quiz",
+    "description": "A quiz to test your basic knowledge of JavaScript.",
+    "category": "Programming",
+    "difficulty": "Easy",
+    "questions": [
+      {
+        "question": "What does 'var' keyword do in JavaScript?",
+        "options": [
+          "Declare a variable",
+          "Declare a function",
+          "Declare a constant",
+          "Declare an array"
+        ],
+        "correctAnswer": "Declare a variable"
+      },
+      {
+        "question": "Which company developed JavaScript?",
+        "options": ["Microsoft", "Apple", "Google", "Netscape"],
+        "correctAnswer": "Netscape"
+      },
+      {
+        "question": "Which symbol is used for comments in JavaScript?",
+        "options": ["//", "/*", "<!--", "#"],
+        "correctAnswer": "//"
+      },
+      {
+        "question": "What is the output of `typeof null` in JavaScript?",
+        "options": ["'object'", "'null'", "'undefined'", "'number'"],
+        "correctAnswer": "'object'"
+      },
+      {
+        "question": "Which method is used to add elements to the end of an array in JavaScript?",
+        "options": ["push()", "pop()", "shift()", "unshift()"],
+        "correctAnswer": "push()"
+      }
+    ]
+  },
+  {
+    "title": "HTML Basics Quiz",
+    "description": "A quiz to test your basic knowledge of HTML.",
+    "category": "Web Development",
+    "difficulty": "Easy",
+    "questions": [
+      {
+        "question": "What does HTML stand for?",
+        "options": [
+          "Hyper Text Markup Language",
+          "Home Tool Markup Language",
+          "Hyperlinks and Text Markup Language",
+          "Hyperlinking Text Markup Language"
+        ],
+        "correctAnswer": "Hyper Text Markup Language"
+      },
+      {
+        "question": "Which HTML tag is used to define an unordered list?",
+        "options": ["<ul>", "<ol>", "<li>", "<list>"],
+        "correctAnswer": "<ul>"
+      },
+      {
+        "question": "Which attribute is used to provide an alternate text for an image in HTML?",
+        "options": ["alt", "src", "title", "href"],
+        "correctAnswer": "alt"
+      },
+      {
+        "question": "What is the purpose of the <head> tag in HTML?",
+        "options": [
+          "To define the metadata and link external resources",
+          "To define the main content of the document",
+          "To create a header for the webpage",
+          "To insert an image"
+        ],
+        "correctAnswer": "To define the metadata and link external resources"
+      },
+      {
+        "question": "Which HTML tag is used to create a hyperlink?",
+        "options": ["<a>", "<link>", "<href>", "<hyperlink>"],
+        "correctAnswer": "<a>"
+      }
+    ]
+  },
+  {
+    "title": "CSS Basics Quiz",
+    "description": "A quiz to test your basic knowledge of CSS.",
+    "category": "Web Development",
+    "difficulty": "Easy",
+    "questions": [
+      {
+        "question": "What does CSS stand for?",
+        "options": [
+          "Cascading Style Sheets",
+          "Colorful Style Sheets",
+          "Computer Style Sheets",
+          "Creative Style Sheets"
+        ],
+        "correctAnswer": "Cascading Style Sheets"
+      },
+      {
+        "question": "Which property is used to change the background color of an element?",
+        "options": ["background-color", "color", "bgcolor", "background"],
+        "correctAnswer": "background-color"
+      },
+      {
+        "question": "How do you make the text bold in CSS?",
+        "options": [
+          "font-weight: bold;",
+          "text-decoration: bold;",
+          "font-style: bold;",
+          "text-weight: bold;"
+        ],
+        "correctAnswer": "font-weight: bold;"
+      },
+      {
+        "question": "Which CSS property is used to change the text color of an element?",
+        "options": ["color", "text-color", "font-color", "foreground-color"],
+        "correctAnswer": "color"
+      },
+      {
+        "question": "What is the default value of the position property in CSS?",
+        "options": ["static", "relative", "absolute", "fixed"],
+        "correctAnswer": "static"
+      }
+    ]
+  },
+  {
+    "title": "JavaScript Intermediate Quiz",
+    "description": "A quiz to test your intermediate knowledge of JavaScript.",
+    "category": "Programming",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "Which method is used to filter elements of an array in JavaScript?",
+        "options": ["filter()", "map()", "reduce()", "find()"],
+        "correctAnswer": "filter()"
+      },
+      {
+        "question": "What is a closure in JavaScript?",
+        "options": [
+          "A function that remembers its lexical scope",
+          "A block of code that executes immediately",
+          "A function that is used to encapsulate variables",
+          "A function that doesn't return anything"
+        ],
+        "correctAnswer": "A function that remembers its lexical scope"
+      },
+      {
+        "question": "Which method is used to convert a JSON object to a string in JavaScript?",
+        "options": [
+          "JSON.parse()",
+          "JSON.stringify()",
+          "toString()",
+          "parseInt()"
+        ],
+        "correctAnswer": "JSON.stringify()"
+      },
+      {
+        "question": "Which of the following is a way to create an object in JavaScript?",
+        "options": [
+          "var obj = {};",
+          "var obj = Object.create(null);",
+          "var obj = new Object();",
+          "All of the above"
+        ],
+        "correctAnswer": "All of the above"
+      },
+      {
+        "question": "Which keyword is used to handle exceptions in JavaScript?",
+        "options": ["try", "catch", "finally", "All of the above"],
+        "correctAnswer": "All of the above"
+      }
+    ]
+  },
+  {
+    "title": "HTML and CSS Intermediate Quiz",
+    "description": "A quiz to test your intermediate knowledge of HTML and CSS.",
+    "category": "Web Development",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "What is the purpose of the viewport meta tag in HTML?",
+        "options": [
+          "To control the layout on mobile browsers",
+          "To specify the character encoding",
+          "To define the title of the document",
+          "To include external CSS files"
+        ],
+        "correctAnswer": "To control the layout on mobile browsers"
+      },
+      {
+        "question": "Which CSS property is used to create space between the border of an element and its content?",
+        "options": ["padding", "margin", "border", "spacing"],
+        "correctAnswer": "padding"
+      },
+      {
+        "question": "How do you apply a CSS rule to only the first paragraph in a document?",
+        "options": [
+          "p:first-child",
+          "p:first-of-type",
+          "p:only-child",
+          "p:first"
+        ],
+        "correctAnswer": "p:first-of-type"
+      },
+      {
+        "question": "What does the z-index property do in CSS?",
+        "options": [
+          "Controls the stacking order of elements",
+          "Sets the zoom level of an element",
+          "Controls the visibility of an element",
+          "Defines the size of an element"
+        ],
+        "correctAnswer": "Controls the stacking order of elements"
+      },
+      {
+        "question": "Which HTML attribute can be used to make an input field required before submitting a form?",
+        "options": ["required", "mandatory", "validate", "checked"],
+        "correctAnswer": "required"
+      }
+    ]
+  },
+  {
+    "title": "Advanced JavaScript Quiz",
+    "description": "A quiz to test your advanced knowledge of JavaScript.",
+    "category": "Programming",
+    "difficulty": "Hard",
+    "questions": [
+      {
+        "question": "How can you prevent an object’s properties from being added or removed in JavaScript?",
+        "options": [
+          "Object.freeze()",
+          "Object.preventExtensions()",
+          "Object.seal()",
+          "All of the above"
+        ],
+        "correctAnswer": "Object.seal()"
+      },
+      {
+        "question": "What is the difference between == and === in JavaScript?",
+        "options": [
+          "== checks value equality, === checks value and type equality",
+          "== checks reference equality, === checks value equality",
+          "== checks type equality, === checks value equality",
+          "== checks both value and type equality, === checks reference equality"
+        ],
+        "correctAnswer": "== checks value equality, === checks value and type equality"
+      },
+      {
+        "question": "Which of the following is not a valid JavaScript loop?",
+        "options": ["for", "while", "do-while", "repeat-until"],
+        "correctAnswer": "repeat-until"
+      },
+      {
+        "question": "How do you create a private variable in JavaScript?",
+        "options": [
+          "Using closures",
+          "Using the var keyword",
+          "Using let",
+          "Using const"
+        ],
+        "correctAnswer": "Using closures"
+      },
+      {
+        "question": "Which of the following is not a valid way to define a function in JavaScript?",
+        "options": [
+          "Function declaration",
+          "Function expression",
+          "Arrow function",
+          "Function overloading"
+        ],
+        "correctAnswer": "Function overloading"
+      }
+    ]
+  },
+  {
+    "title": "C++ Basics Quiz",
+    "description": "A quiz to test your basic knowledge of C++.",
+    "category": "Programming",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "Which of the following is the correct way to declare a variable in C++?",
+        "options": ["int x;", "var x = 10;", "x = 10;", "declare x as int;"],
+        "correctAnswer": "int x;"
+      },
+      {
+        "question": "What is the purpose of the `#include` directive in C++?",
+        "options": [
+          "To include the contents of a file or library in the program",
+          "To define a macro",
+          "To declare a variable",
+          "To create a loop"
+        ],
+        "correctAnswer": "To include the contents of a file or library in the program"
+      },
+      {
+        "question": "Which of the following is used to create a constant variable in C++?",
+        "options": ["const", "final", "static", "immutable"],
+        "correctAnswer": "const"
+      },
+      {
+        "question": "How do you access the members of a structure in C++?",
+        "options": [
+          "Using the dot `.` operator",
+          "Using the arrow `->` operator",
+          "Using the colon `:` operator",
+          "Using the equals `=` operator"
+        ],
+        "correctAnswer": "Using the dot `.` operator"
+      },
+      {
+        "question": "Which of the following is not a valid C++ data type?",
+        "options": ["int", "float", "boolean", "double"],
+        "correctAnswer": "boolean"
+      }
+    ]
+  },
+  {
+    "title": "Python Basics Quiz",
+    "description": "A quiz to test your basic knowledge of Python.",
+    "category": "Programming",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "Which of the following is the correct way to declare a function in Python?",
+        "options": [
+          "def function_name():",
+          "function function_name():",
+          "declare function_name():",
+          "func function_name():"
+        ],
+        "correctAnswer": "def function_name():"
+      },
+      {
+        "question": "What is the correct syntax to output 'Hello, World!' in Python?",
+        "options": [
+          "print('Hello, World!')",
+          "echo 'Hello, World!'",
+          "console.log('Hello, World!')",
+          "printf('Hello, World!')"
+        ],
+        "correctAnswer": "print('Hello, World!')"
+      },
+      {
+        "question": "Which of the following data types is immutable in Python?",
+        "options": ["List", "Dictionary", "Tuple", "Set"],
+        "correctAnswer": "Tuple"
+      },
+      {
+        "question": "How do you create a list in Python?",
+        "options": ["[]", "{}", "()", "<>"],
+        "correctAnswer": "[]"
+      },
+      {
+        "question": "Which keyword is used to define a class in Python?",
+        "options": ["class", "def", "function", "struct"],
+        "correctAnswer": "class"
+      }
+    ]
+  }
+]
