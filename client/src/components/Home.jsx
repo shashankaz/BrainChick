@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ProfileHero from "./ProfileHero";
 import QuizSection from "./QuizSection";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
+import Cover from "./Cover";
 
 const Home = () => {
   const [quizzes, setQuizzes] = useState([]);
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     const fetchQuizzes = async () => {
@@ -23,7 +27,11 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      <ProfileHero title={"Welcome to BrainChick"} name={true} />
+      {user ? (
+        <ProfileHero title={"Welcome to BrainChick"} name={true} />
+      ) : (
+        <Cover />
+      )}
       <div className="px-4 sm:px-8 md:px-16 lg:px-32 py-6 sm:py-10">
         <QuizSection
           title="Web Development"

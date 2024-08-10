@@ -48,12 +48,16 @@ const Navbar = () => {
         </div>
       ) : (
         <div className="flex justify-end w-48 gap-2 ml-3">
-          <div className="uppercase border-2 p-1 sm:p-2 rounded-lg text-xs sm:text-sm font-semibold border-teal-600 text-teal-600 ">
-            <Link to={"/signin"}>Sign In</Link>
-          </div>
-          <div className="uppercase border-2 p-1 sm:p-2 rounded-lg text-xs sm:text-sm font-semibold border-teal-600 bg-teal-600 ">
-            <Link to={"/signup"}>Sign Up</Link>
-          </div>
+          <Link to={"/signin"}>
+            <div className="uppercase border-2 p-1 sm:p-2 rounded-lg text-xs sm:text-sm font-semibold border-teal-600 text-teal-600 ">
+              Sign In
+            </div>
+          </Link>
+          <Link to={"/signup"}>
+            <div className="uppercase border-2 p-1 sm:p-2 rounded-lg text-xs sm:text-sm font-semibold border-teal-600 bg-teal-600 ">
+              Sign Up
+            </div>
+          </Link>
         </div>
       )}
     </div>
