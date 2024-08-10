@@ -15,6 +15,7 @@ app.use(
     origin: frontendUrl,
   })
 );
+// app.use(cors());
 
 app.use("/api/quizzes", quizRoutes);
 app.use("/api/results", quizResultRoutes);

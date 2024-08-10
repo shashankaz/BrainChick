@@ -357,5 +357,798 @@
         "correctAnswer": "class"
       }
     ]
+  },
+  {
+    "title": "Data Structures Basics Quiz",
+    "description": "A quiz to test your basic knowledge of Data Structures.",
+    "category": "Programming",
+    "difficulty": "Advanced",
+    "questions": [
+      {
+        "question": "Which data structure uses LIFO (Last In, First Out) principle?",
+        "options": ["Stack", "Queue", "Linked List", "Tree"],
+        "correctAnswer": "Stack"
+      },
+      {
+        "question": "Which of the following is not a linear data structure?",
+        "options": ["Array", "Tree", "Queue", "Linked List"],
+        "correctAnswer": "Tree"
+      },
+      {
+        "question": "What is the time complexity of searching an element in a binary search tree?",
+        "options": ["O(log n)", "O(n)", "O(n log n)", "O(1)"],
+        "correctAnswer": "O(log n)"
+      },
+      {
+        "question": "Which of the following is the best for implementing a priority queue?",
+        "options": ["Heap", "Stack", "Queue", "Linked List"],
+        "correctAnswer": "Heap"
+      },
+      {
+        "question": "What is a self-balancing binary search tree?",
+        "options": ["AVL Tree", "Red-Black Tree", "Both", "None"],
+        "correctAnswer": "Both"
+      }
+    ]
+  },
+  {
+    "title": "SQL Basics Quiz",
+    "description": "A quiz to test your basic knowledge of SQL.",
+    "category": "Database",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "What does SQL stand for?",
+        "options": [
+          "Structured Query Language",
+          "Structured Question Language",
+          "Simple Query Language",
+          "Standard Query Language"
+        ],
+        "correctAnswer": "Structured Query Language"
+      },
+      {
+        "question": "Which SQL statement is used to extract data from a database?",
+        "options": ["SELECT", "EXTRACT", "GET", "OPEN"],
+        "correctAnswer": "SELECT"
+      },
+      {
+        "question": "Which SQL statement is used to update data in a database?",
+        "options": ["UPDATE", "SAVE", "MODIFY", "EDIT"],
+        "correctAnswer": "UPDATE"
+      },
+      {
+        "question": "Which SQL clause is used to filter records?",
+        "options": ["WHERE", "FILTER", "ORDER BY", "GROUP BY"],
+        "correctAnswer": "WHERE"
+      },
+      {
+        "question": "What is the command to delete a table named 'Customers'?",
+        "options": [
+          "DROP TABLE Customers;",
+          "DELETE Customers;",
+          "REMOVE TABLE Customers;",
+          "DELETE FROM Customers;"
+        ],
+        "correctAnswer": "DROP TABLE Customers;"
+      }
+    ]
+  },
+  {
+    "title": "Cybersecurity Basics Quiz",
+    "description": "A quiz to test your basic knowledge of cybersecurity concepts.",
+    "category": "Cybersecurity",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "What does the acronym 'VPN' stand for?",
+        "options": [
+          "Virtual Private Network",
+          "Virtual Personal Network",
+          "Virtual Protected Network",
+          "Virtual Public Network"
+        ],
+        "correctAnswer": "Virtual Private Network"
+      },
+      {
+        "question": "Which of the following is an example of a strong password?",
+        "options": ["password123", "JohnDoe", "qwerty", "A3$gF6*9"],
+        "correctAnswer": "A3$gF6*9"
+      },
+      {
+        "question": "What type of attack is characterized by overwhelming a system with traffic?",
+        "options": ["DDoS", "Phishing", "Ransomware", "Man-in-the-Middle"],
+        "correctAnswer": "DDoS"
+      },
+      {
+        "question": "Which of the following is a common method used to protect data in transit?",
+        "options": ["Encryption", "Compression", "Backup", "Decryption"],
+        "correctAnswer": "Encryption"
+      },
+      {
+        "question": "What does 'phishing' typically involve?",
+        "options": [
+          "Tricking someone into revealing personal information",
+          "Physically stealing someone's device",
+          "Installing software on a computer",
+          "Cracking a password"
+        ],
+        "correctAnswer": "Tricking someone into revealing personal information"
+      }
+    ]
+  },
+  {
+    "title": "Cloud Computing Basics Quiz",
+    "description": "A quiz to test your basic knowledge of cloud computing concepts.",
+    "category": "Cloud Computing",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "What is the main benefit of cloud computing?",
+        "options": [
+          "On-demand availability of computing resources",
+          "Increased energy consumption",
+          "High upfront costs",
+          "Slower performance"
+        ],
+        "correctAnswer": "On-demand availability of computing resources"
+      },
+      {
+        "question": "Which cloud service model is focused on providing software over the internet?",
+        "options": ["SaaS", "PaaS", "IaaS", "DaaS"],
+        "correctAnswer": "SaaS"
+      },
+      {
+        "question": "What does 'IaaS' stand for?",
+        "options": [
+          "Infrastructure as a Service",
+          "Internet as a Service",
+          "Integration as a Service",
+          "Interface as a Service"
+        ],
+        "correctAnswer": "Infrastructure as a Service"
+      },
+      {
+        "question": "Which of the following is a benefit of using cloud storage?",
+        "options": [
+          "Scalability",
+          "Data is stored locally",
+          "Limited accessibility",
+          "Fixed storage capacity"
+        ],
+        "correctAnswer": "Scalability"
+      },
+      {
+        "question": "Which cloud deployment model offers services to the general public?",
+        "options": [
+          "Public Cloud",
+          "Private Cloud",
+          "Hybrid Cloud",
+          "Community Cloud"
+        ],
+        "correctAnswer": "Public Cloud"
+      }
+    ]
+  },
+  {
+    "title": "Artificial Intelligence Basics Quiz",
+    "description": "A quiz to test your basic knowledge of artificial intelligence concepts.",
+    "category": "Artificial Intelligence",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "What is the primary goal of artificial intelligence?",
+        "options": [
+          "To create machines that can think and learn",
+          "To replace human workers",
+          "To increase data storage",
+          "To improve network security"
+        ],
+        "correctAnswer": "To create machines that can think and learn"
+      },
+      {
+        "question": "Which of the following is a common application of AI?",
+        "options": [
+          "Speech recognition",
+          "Web browsing",
+          "Email filtering",
+          "File compression"
+        ],
+        "correctAnswer": "Speech recognition"
+      },
+      {
+        "question": "What is 'machine learning'?",
+        "options": [
+          "A subset of AI where machines improve over time without explicit programming",
+          "A method for hardware design",
+          "A type of computer virus",
+          "A programming language"
+        ],
+        "correctAnswer": "A subset of AI where machines improve over time without explicit programming"
+      },
+      {
+        "question": "Which of the following AI techniques is inspired by the human brain?",
+        "options": [
+          "Neural Networks",
+          "Genetic Algorithms",
+          "Decision Trees",
+          "Linear Regression"
+        ],
+        "correctAnswer": "Neural Networks"
+      },
+      {
+        "question": "What does 'NLP' stand for in the context of AI?",
+        "options": [
+          "Natural Language Processing",
+          "Neural Learning Protocol",
+          "Network Latency Protocol",
+          "Natural Logic Programming"
+        ],
+        "correctAnswer": "Natural Language Processing"
+      }
+    ]
+  },
+  {
+    "title": "Blockchain Basics Quiz",
+    "description": "A quiz to test your basic knowledge of blockchain technology.",
+    "category": "Blockchain",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "What is a blockchain?",
+        "options": [
+          "A distributed ledger technology",
+          "A type of database",
+          "A programming language",
+          "An encryption method"
+        ],
+        "correctAnswer": "A distributed ledger technology"
+      },
+      {
+        "question": "Which cryptocurrency was the first to use blockchain technology?",
+        "options": ["Bitcoin", "Ethereum", "Ripple", "Litecoin"],
+        "correctAnswer": "Bitcoin"
+      },
+      {
+        "question": "What does 'decentralization' mean in the context of blockchain?",
+        "options": [
+          "No single entity has control over the network",
+          "Centralized control by a single organization",
+          "Limited access to the network",
+          "Data is stored in a central location"
+        ],
+        "correctAnswer": "No single entity has control over the network"
+      },
+      {
+        "question": "What is a 'smart contract'?",
+        "options": [
+          "Self-executing contracts with the terms written in code",
+          "A legal agreement between two parties",
+          "A method for encrypting data",
+          "A type of cryptocurrency"
+        ],
+        "correctAnswer": "Self-executing contracts with the terms written in code"
+      },
+      {
+        "question": "Which of the following is a common use case for blockchain technology?",
+        "options": [
+          "Supply chain management",
+          "File compression",
+          "Web hosting",
+          "Graphic design"
+        ],
+        "correctAnswer": "Supply chain management"
+      }
+    ]
+  },
+  {
+    "title": "Networking Basics Quiz",
+    "description": "A quiz to test your basic knowledge of networking concepts.",
+    "category": "Networking",
+    "difficulty": "Beginner",
+    "questions": [
+      {
+        "question": "What does 'IP' stand for in the context of networking?",
+        "options": [
+          "Internet Protocol",
+          "Internal Process",
+          "Information Pathway",
+          "Integrated Program"
+        ],
+        "correctAnswer": "Internet Protocol"
+      },
+      {
+        "question": "Which device is used to connect multiple devices in a local network?",
+        "options": ["Router", "Switch", "Firewall", "Modem"],
+        "correctAnswer": "Switch"
+      },
+      {
+        "question": "What is the purpose of a firewall in a network?",
+        "options": [
+          "To protect the network from unauthorized access",
+          "To connect devices within a network",
+          "To provide internet access",
+          "To increase network speed"
+        ],
+        "correctAnswer": "To protect the network from unauthorized access"
+      },
+      {
+        "question": "Which of the following is an example of a private IP address?",
+        "options": ["192.168.1.1", "8.8.8.8", "172.217.16.78", "10.0.0.1"],
+        "correctAnswer": "192.168.1.1"
+      },
+      {
+        "question": "What does 'DNS' stand for?",
+        "options": [
+          "Domain Name System",
+          "Data Network System",
+          "Digital Network Service",
+          "Dynamic Name Service"
+        ],
+        "correctAnswer": "Domain Name System"
+      }
+    ]
+  },
+  {
+    "title": "Database Fundamentals Quiz",
+    "description": "A quiz to test your understanding of basic database concepts.",
+    "category": "Database",
+    "difficulty": "Beginner",
+    "questions": [
+      {
+        "question": "Which of the following is a type of database management system (DBMS)?",
+        "options": ["Relational", "Linear", "Hierarchical", "Functional"],
+        "correctAnswer": "Relational"
+      },
+      {
+        "question": "What does 'SQL' stand for?",
+        "options": [
+          "Structured Query Language",
+          "Sequential Query Language",
+          "Structured Queue Language",
+          "Simple Query Language"
+        ],
+        "correctAnswer": "Structured Query Language"
+      },
+      {
+        "question": "Which SQL command is used to retrieve data from a database?",
+        "options": ["SELECT", "INSERT", "DELETE", "UPDATE"],
+        "correctAnswer": "SELECT"
+      },
+      {
+        "question": "What is a 'primary key' in a database?",
+        "options": [
+          "A unique identifier for a record in a table",
+          "A secondary identifier for a record",
+          "A foreign key in a table",
+          "A composite key"
+        ],
+        "correctAnswer": "A unique identifier for a record in a table"
+      },
+      {
+        "question": "Which type of database is best for handling large amounts of unstructured data?",
+        "options": ["NoSQL", "SQL", "Flat file", "In-memory"],
+        "correctAnswer": "NoSQL"
+      }
+    ]
+  },
+  {
+    "title": "Database Design and Modeling Quiz",
+    "description": "A quiz to assess your knowledge of database design and data modeling concepts.",
+    "category": "Database",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "What is 'normalization' in the context of databases?",
+        "options": [
+          "The process of organizing data to reduce redundancy",
+          "The process of backing up a database",
+          "The method of encrypting data in a database",
+          "The way of indexing data for faster queries"
+        ],
+        "correctAnswer": "The process of organizing data to reduce redundancy"
+      },
+      {
+        "question": "Which normal form eliminates partial dependencies?",
+        "options": ["2NF", "1NF", "3NF", "BCNF"],
+        "correctAnswer": "2NF"
+      },
+      {
+        "question": "In an ER diagram, what does a 'diamond' represent?",
+        "options": ["A relationship", "An entity", "An attribute", "A key"],
+        "correctAnswer": "A relationship"
+      },
+      {
+        "question": "What is a 'foreign key' used for?",
+        "options": [
+          "To establish a link between two tables",
+          "To uniquely identify a record in a table",
+          "To store foreign language characters",
+          "To define data types"
+        ],
+        "correctAnswer": "To establish a link between two tables"
+      },
+      {
+        "question": "Which of the following is a common database schema design pattern?",
+        "options": [
+          "Star Schema",
+          "Star Table",
+          "Ring Schema",
+          "Circular Schema"
+        ],
+        "correctAnswer": "Star Schema"
+      }
+    ]
+  },
+  {
+    "title": "Advanced Blockchain Concepts Quiz",
+    "description": "A quiz to challenge your knowledge of advanced blockchain concepts.",
+    "category": "Blockchain",
+    "difficulty": "Advanced",
+    "questions": [
+      {
+        "question": "What is a 'consensus algorithm' in blockchain?",
+        "options": [
+          "A method to achieve agreement on a single data value",
+          "A type of cryptographic hash function",
+          "A tool for measuring blockchain performance",
+          "A mechanism to create smart contracts"
+        ],
+        "correctAnswer": "A method to achieve agreement on a single data value"
+      },
+      {
+        "question": "Which consensus mechanism is most commonly used in Bitcoin?",
+        "options": [
+          "Proof of Work (PoW)",
+          "Proof of Stake (PoS)",
+          "Delegated Proof of Stake (DPoS)",
+          "Proof of Authority (PoA)"
+        ],
+        "correctAnswer": "Proof of Work (PoW)"
+      },
+      {
+        "question": "What is the main purpose of 'mining' in a blockchain?",
+        "options": [
+          "To validate transactions and add them to the blockchain",
+          "To create new cryptocurrency",
+          "To store data on the blockchain",
+          "To encrypt blockchain data"
+        ],
+        "correctAnswer": "To validate transactions and add them to the blockchain"
+      },
+      {
+        "question": "What is a '51% attack' in the context of blockchain?",
+        "options": [
+          "An attack where a single entity controls more than half of the network's mining power",
+          "A method to speed up transaction processing",
+          "A form of cryptographic hacking",
+          "A way to reduce blockchain bloat"
+        ],
+        "correctAnswer": "An attack where a single entity controls more than half of the network's mining power"
+      },
+      {
+        "question": "Which blockchain feature allows for the creation of decentralized applications (DApps)?",
+        "options": ["Smart Contracts", "Proof of Work", "Hashing", "Mining"],
+        "correctAnswer": "Smart Contracts"
+      }
+    ]
+  },
+  {
+    "title": "Blockchain Use Cases Quiz",
+    "description": "A quiz to explore various practical applications of blockchain technology.",
+    "category": "Blockchain",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "Which industry is using blockchain for transparent and immutable supply chain tracking?",
+        "options": ["Logistics", "Healthcare", "Banking", "Real Estate"],
+        "correctAnswer": "Logistics"
+      },
+      {
+        "question": "How is blockchain used in the financial sector?",
+        "options": [
+          "For secure and transparent transactions",
+          "For storing large data files",
+          "For running high-frequency trading algorithms",
+          "For designing financial products"
+        ],
+        "correctAnswer": "For secure and transparent transactions"
+      },
+      {
+        "question": "Which of the following is a common blockchain-based identity verification platform?",
+        "options": ["Civic", "Ripple", "Chainlink", "Tezos"],
+        "correctAnswer": "Civic"
+      },
+      {
+        "question": "What role does blockchain play in decentralized finance (DeFi)?",
+        "options": [
+          "It provides the infrastructure for decentralized financial services",
+          "It replaces traditional banking completely",
+          "It acts as a central authority",
+          "It reduces the need for digital currencies"
+        ],
+        "correctAnswer": "It provides the infrastructure for decentralized financial services"
+      },
+      {
+        "question": "Which blockchain-based platform is known for enabling smart contracts?",
+        "options": ["Ethereum", "Bitcoin", "Litecoin", "Monero"],
+        "correctAnswer": "Ethereum"
+      }
+    ]
+  },
+  {
+    "title": "Machine Learning Fundamentals Quiz",
+    "description": "A quiz to test your knowledge of machine learning concepts.",
+    "category": "Artificial Intelligence",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "What is 'supervised learning' in machine learning?",
+        "options": [
+          "A type of learning where the model is trained on labeled data",
+          "Learning without any labeled data",
+          "Learning from feedback in a real-time environment",
+          "A method to speed up the learning process"
+        ],
+        "correctAnswer": "A type of learning where the model is trained on labeled data"
+      },
+      {
+        "question": "Which of the following is an example of a supervised learning algorithm?",
+        "options": [
+          "Linear Regression",
+          "K-Means Clustering",
+          "PCA",
+          "Reinforcement Learning"
+        ],
+        "correctAnswer": "Linear Regression"
+      },
+      {
+        "question": "What is 'overfitting' in machine learning?",
+        "options": [
+          "When a model learns the training data too well and fails to generalize",
+          "When a model is too simple and cannot capture the data's complexity",
+          "When a model underperforms in the training phase",
+          "When a model is trained with insufficient data"
+        ],
+        "correctAnswer": "When a model learns the training data too well and fails to generalize"
+      },
+      {
+        "question": "Which of the following is used to evaluate the performance of a classification model?",
+        "options": [
+          "Confusion Matrix",
+          "Mean Squared Error",
+          "R-Squared",
+          "Gradient Descent"
+        ],
+        "correctAnswer": "Confusion Matrix"
+      },
+      {
+        "question": "What does 'hyperparameter tuning' involve in machine learning?",
+        "options": [
+          "Optimizing the parameters that control the learning process",
+          "Choosing the best algorithm for a given problem",
+          "Scaling data for better performance",
+          "Creating features from raw data"
+        ],
+        "correctAnswer": "Optimizing the parameters that control the learning process"
+      }
+    ]
+  },
+  {
+    "title": "AI Applications Quiz",
+    "description": "A quiz to explore the various real-world applications of artificial intelligence.",
+    "category": "Artificial Intelligence",
+    "difficulty": "Beginner",
+    "questions": [
+      {
+        "question": "Which AI technology is commonly used in virtual assistants like Siri and Alexa?",
+        "options": [
+          "Natural Language Processing (NLP)",
+          "Computer Vision",
+          "Robotics",
+          "Game AI"
+        ],
+        "correctAnswer": "Natural Language Processing (NLP)"
+      },
+      {
+        "question": "How is AI used in the healthcare industry?",
+        "options": [
+          "For predictive analytics in patient care",
+          "For designing video games",
+          "For developing financial software",
+          "For building automobiles"
+        ],
+        "correctAnswer": "For predictive analytics in patient care"
+      },
+      {
+        "question": "Which AI technique is used for image recognition?",
+        "options": [
+          "Deep Learning",
+          "Genetic Algorithms",
+          "Reinforcement Learning",
+          "Decision Trees"
+        ],
+        "correctAnswer": "Deep Learning"
+      },
+      {
+        "question": "What role does AI play in autonomous vehicles?",
+        "options": [
+          "It helps in navigation and decision-making processes",
+          "It is used to design the vehicle's engine",
+          "It powers the entertainment system",
+          "It assists in marketing the vehicles"
+        ],
+        "correctAnswer": "It helps in navigation and decision-making processes"
+      },
+      {
+        "question": "Which AI technology is used for recommendation systems, such as those on Netflix or Amazon?",
+        "options": [
+          "Collaborative Filtering",
+          "Genetic Algorithms",
+          "Game AI",
+          "Reinforcement Learning"
+        ],
+        "correctAnswer": "Collaborative Filtering"
+      }
+    ]
+  },
+  {
+    "title": "Networking Basics Quiz",
+    "description": "A quiz to test your knowledge of basic networking concepts.",
+    "category": "Networking",
+    "difficulty": "Beginner",
+    "questions": [
+      {
+        "question": "What does 'IP' stand for in networking?",
+        "options": [
+          "Internet Protocol",
+          "Internal Process",
+          "Interconnect Program",
+          "Integrated Platform"
+        ],
+        "correctAnswer": "Internet Protocol"
+      },
+      {
+        "question": "Which of the following is a common type of network topology?",
+        "options": ["Star", "Circle", "Rectangle", "Triangle"],
+        "correctAnswer": "Star"
+      },
+      {
+        "question": "What device is used to connect multiple networks together?",
+        "options": ["Router", "Switch", "Modem", "Hub"],
+        "correctAnswer": "Router"
+      },
+      {
+        "question": "Which protocol is used to assign IP addresses dynamically?",
+        "options": ["DHCP", "DNS", "FTP", "HTTP"],
+        "correctAnswer": "DHCP"
+      },
+      {
+        "question": "What is the purpose of a subnet mask?",
+        "options": [
+          "To define network and host portions of an IP address",
+          "To encrypt data over the network",
+          "To route packets to the correct destination",
+          "To monitor network traffic"
+        ],
+        "correctAnswer": "To define network and host portions of an IP address"
+      }
+    ]
+  },
+  {
+    "title": "Cloud Computing Essentials Quiz",
+    "description": "A quiz to assess your understanding of fundamental cloud computing concepts.",
+    "category": "Cloud Computing",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "Which of the following is a cloud service model?",
+        "options": [
+          "Infrastructure as a Service (IaaS)",
+          "Network as a Service (NaaS)",
+          "Storage as a Service (StaaS)",
+          "Hardware as a Service (HaaS)"
+        ],
+        "correctAnswer": "Infrastructure as a Service (IaaS)"
+      },
+      {
+        "question": "What does 'SaaS' stand for?",
+        "options": [
+          "Software as a Service",
+          "Storage as a Service",
+          "Security as a Service",
+          "System as a Service"
+        ],
+        "correctAnswer": "Software as a Service"
+      },
+      {
+        "question": "Which cloud deployment model involves a combination of public and private clouds?",
+        "options": [
+          "Hybrid Cloud",
+          "Public Cloud",
+          "Private Cloud",
+          "Community Cloud"
+        ],
+        "correctAnswer": "Hybrid Cloud"
+      },
+      {
+        "question": "Which cloud provider offers the EC2 service?",
+        "options": [
+          "Amazon Web Services (AWS)",
+          "Microsoft Azure",
+          "Google Cloud Platform",
+          "IBM Cloud"
+        ],
+        "correctAnswer": "Amazon Web Services (AWS)"
+      },
+      {
+        "question": "What is the main advantage of cloud scalability?",
+        "options": [
+          "Easily adjusting resources based on demand",
+          "Providing constant storage capacity",
+          "Ensuring 24/7 customer support",
+          "Reducing the cost of physical servers"
+        ],
+        "correctAnswer": "Easily adjusting resources based on demand"
+      }
+    ]
+  },
+  {
+    "title": "Cybersecurity Awareness Quiz",
+    "description": "A quiz to evaluate your understanding of essential cybersecurity principles.",
+    "category": "Cybersecurity",
+    "difficulty": "Intermediate",
+    "questions": [
+      {
+        "question": "Which of the following is a common method of phishing?",
+        "options": [
+          "Sending fraudulent emails to trick recipients into revealing sensitive information",
+          "Stealing a user's password using brute force",
+          "Encrypting data to prevent access",
+          "Installing a firewall to block unauthorized access"
+        ],
+        "correctAnswer": "Sending fraudulent emails to trick recipients into revealing sensitive information"
+      },
+      {
+        "question": "What is a 'firewall' used for in cybersecurity?",
+        "options": [
+          "To prevent unauthorized access to or from a private network",
+          "To encrypt files on a system",
+          "To monitor and analyze network traffic",
+          "To store sensitive information securely"
+        ],
+        "correctAnswer": "To prevent unauthorized access to or from a private network"
+      },
+      {
+        "question": "What is 'ransomware'?",
+        "options": [
+          "Malicious software that encrypts data and demands payment for decryption",
+          "Software that monitors and logs keystrokes",
+          "A security feature that controls access to resources",
+          "A type of firewall"
+        ],
+        "correctAnswer": "Malicious software that encrypts data and demands payment for decryption"
+      },
+      {
+        "question": "Which of the following is a strong password policy?",
+        "options": [
+          "Using a mix of letters, numbers, and special characters",
+          "Using your name and birthdate as the password",
+          "Keeping the password the same for all accounts",
+          "Writing the password on a sticky note"
+        ],
+        "correctAnswer": "Using a mix of letters, numbers, and special characters"
+      },
+      {
+        "question": "What is two-factor authentication (2FA)?",
+        "options": [
+          "A security process that requires two forms of identification before access is granted",
+          "A method to ensure high-speed internet access",
+          "A tool used to encrypt emails",
+          "A type of malware that infects two devices simultaneously"
+        ],
+        "correctAnswer": "A security process that requires two forms of identification before access is granted"
+      }
+    ]
   }
 ]

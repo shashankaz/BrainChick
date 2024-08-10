@@ -1,13 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const BarCard = ({ id, title, description, category, difficulty }) => {
+const BarCard = ({
+  id,
+  imageUrl,
+  title,
+  description,
+  category,
+  difficulty,
+}) => {
   return (
     <Link to={`/quiz/${id}`}>
       <div className="w-full h-auto md:h-44 p-4 flex flex-col md:flex-row gap-4 hover:bg-slate-800 hover:cursor-pointer">
         <div className="bg-black h-48 md:h-full w-full md:w-72 rounded-lg overflow-hidden">
           <img
-            src="https://picsum.photos/800/400"
+            src={imageUrl}
             className="h-full w-full object-cover"
             alt="cover"
           />
