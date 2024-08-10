@@ -12,7 +12,7 @@ const QuizIntro = () => {
 
   useEffect(() => {
     if (!user) {
-      navigate("/login");
+      navigate("/signin");
     } else {
       const fetchQuizzes = async () => {
         try {

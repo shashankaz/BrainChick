@@ -13,7 +13,7 @@ const QuizPage = () => {
 
   useEffect(() => {
     if (!user) {
-      navigate("/login");
+      navigate("/signin");
     } else {
       const fetchQuiz = async () => {
         try {
