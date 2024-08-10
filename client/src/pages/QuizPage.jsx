@@ -12,19 +12,23 @@ const QuizPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchQuiz = async () => {
-      try {
-        const response = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/quizzes/${quizId}`
-        );
-        const data = await response.json();
-        setQuiz(data.quiz);
-      } catch (err) {
-        console.error("Error fetching quiz:", err);
-      }
-    };
+    if (!user) {
+      navigate("/login");
+    } else {
+      const fetchQuiz = async () => {
+        try {
+          const response = await fetch(
+            `${import.meta.env.VITE_BACKEND_URL}/api/quizzes/${quizId}`
+          );
+          const data = await response.json();
+          setQuiz(data.quiz);
+        } catch (err) {
+          console.error("Error fetching quiz:", err);
+        }
+      };
 
-    fetchQuiz();
+      fetchQuiz();
+    }
   }, [quizId, user, navigate]);
 
   const handleOptionChange = (questionIndex, selectedOption) => {

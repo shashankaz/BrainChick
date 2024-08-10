@@ -1,26 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
 import ProfileHero from "../components/ProfileHero";
 
 const QuizIntro = () => {
   const [quizzes, setQuizzes] = useState({});
   const { quizId } = useParams();
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchQuizzes = async () => {
-      try {
-        const response = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/quizzes/${quizId}`
-        );
-        const data = await response.json();
-        setQuizzes(data.quiz);
-      } catch (error) {
-        console.error("Error fetching quizzes:", error);
-      }
-    };
+    if (!user) {
+      navigate("/login");
+    } else {
+      const fetchQuizzes = async () => {
+        try {
+          const response = await fetch(
+            `${import.meta.env.VITE_BACKEND_URL}/api/quizzes/${quizId}`
+          );
+          const data = await response.json();
+          setQuizzes(data.quiz);
+        } catch (error) {
+          console.error("Error fetching quizzes:", error);
+        }
+      };
 
-    fetchQuizzes();
+      fetchQuizzes();
+    }
   }, [quizId]);
 
   const handleStartQuiz = () => {
