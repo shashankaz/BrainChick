@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Card = ({ id, imageUrl, title, difficulty }) => {
   return (
     <Link to={`/quiz/${id}`}>
-      <div className="bg-slate-800 w-44 sm:w-52 md:w-64 h-64 sm:h-72 rounded-lg p-3 hover:shadow-lg hover:-translate-y-1 cursor-pointer transition-transform duration-300 ease-in-out">
+      <div className="bg-slate-800 w-44 sm:w-52 md:w-64 h-64 sm:h-72 rounded-lg p-3 hover:shadow-lg hover:-translate-y-2 cursor-pointer transition-transform duration-300 ease-in-out">
         <div className="bg-gray-900 w-full h-28 sm:h-36 rounded-lg overflow-hidden shadow-md">
           <img
             src={imageUrl}

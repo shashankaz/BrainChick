@@ -26,7 +26,7 @@ const SignIn = () => {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/");
     } catch (error) {
-      console.log(error.message);
+      console.error(error.message);
     }
   };
 
@@ -35,78 +35,96 @@ const SignIn = () => {
       await signInWithPopup(auth, googleProvider);
       navigate("/");
     } catch (error) {
-      console.log(error.message);
+      console.error(error.message);
     }
   };
 
   return (
-    <div className="my-14 flex items-center justify-center px-4">
-      <div className="w-full max-w-md p-8">
-        <h1 className="text-2xl font-semibold text-center">
-          Sign In To Your Account
-        </h1>
-        <h5 className="mt-4 text-center">
+    <div className="min-h-screen flex items-center justify-center px-4 py-10">
+      <div className="w-full max-w-lg bg-slate-800 rounded-lg p-8">
+        <h1 className="text-3xl font-bold text-center text-white">Sign In</h1>
+        <p className="mt-4 text-center text-gray-400">
           Don&apos;t have an account?{" "}
           <Link
-            to={"/signup"}
-            className="uppercase hover:underline text-sm text-teal-600"
+            to="/signup"
+            className="text-teal-500 hover:text-teal-300 transition"
           >
             Sign Up
           </Link>
-        </h5>
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col mt-4">
-          <label htmlFor="email">Email*</label>
-          <input
-            type="email"
-            placeholder="Enter your email"
-            id="email"
-            className="bg-transparent border border-gray-500 p-2 rounded-md mt-1"
-            {...register("email", { required: "Email is required" })}
-          />
-          {errors.email && (
-            <p className="text-red-600 mt-1">{errors.email.message}</p>
-          )}
+        </p>
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col mt-6 space-y-4"
+        >
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-300"
+            >
+              Email*
+            </label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              className="mt-1 p-3 w-full bg-slate-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
+              {...register("email", { required: "Email is required" })}
+            />
+            {errors.email && (
+              <p className="mt-1 text-red-500 text-sm">
+                {errors.email.message}
+              </p>
+            )}
+          </div>
 
-          <label htmlFor="password" className="mt-4">
-            Password*
-          </label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            id="password"
-            className="bg-transparent border border-gray-500 p-2 rounded-md mt-1"
-            {...register("password", { required: "Password is required" })}
-          />
-          {errors.password && (
-            <p className="text-red-600 mt-1">{errors.password.message}</p>
-          )}
+          <div>
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-300"
+            >
+              Password*
+            </label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              className="mt-1 p-3 w-full bg-slate-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
+              {...register("password", { required: "Password is required" })}
+            />
+            {errors.password && (
+              <p className="mt-1 text-red-500 text-sm">
+                {errors.password.message}
+              </p>
+            )}
+          </div>
 
           <button
-            className="bg-teal-600 mt-8 uppercase rounded-md py-3 font-semibold"
             type="submit"
+            className="mt-6 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-md py-3 transition"
           >
             Sign In
           </button>
         </form>
-        <div className="my-4 text-center">
-          <span>or</span>
+
+        <div className="my-6 flex items-center justify-center text-gray-400">
+          <span className="border-b w-1/4 border-gray-600"></span>
+          <span className="mx-4">OR</span>
+          <span className="border-b w-1/4 border-gray-600"></span>
         </div>
+
         <button
-          className="bg-blue-600 uppercase rounded-md py-3 font-semibold w-full"
-          type="button"
           onClick={handleGoogleLogin}
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md py-3 transition"
         >
           Continue with Google
         </button>
-        <h5 className="mt-4 text-center">
-          Continue without signin?{" "}
-          <Link
-            to={"/"}
-            className="uppercase hover:underline text-sm text-teal-600"
-          >
+
+        <p className="mt-6 text-center text-gray-400">
+          Want to explore without signing in?{" "}
+          <Link to="/" className="text-teal-500 hover:text-teal-300 transition">
             Explore
           </Link>
-        </h5>
+        </p>
       </div>
     </div>
   );

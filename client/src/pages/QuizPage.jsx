@@ -87,8 +87,8 @@ const Btn = ({ text, onClick }) => (
   <button
     type="button"
     onClick={onClick}
-    className="uppercase py-2 px-4 md:px-6 rounded-lg font-semibold flex justify-center bg-teal-600 hover:bg-teal-700 transition-all duration-300 ease-in-out cursor-pointer"
-  >
+    className="uppercase py-2 px-4 rounded-lg font-semibold flex justify-center bg-teal-600 hover:bg-teal-700 transition-all duration-300 ease-in-out cursor-pointer"
+    >
     {text}
   </button>
 );

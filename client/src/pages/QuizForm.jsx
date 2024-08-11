@@ -215,14 +215,14 @@ const QuizForm = () => {
           <button
             type="button"
             onClick={addQuestion}
-            className="bg-blue-600 mt-8 uppercase rounded-md py-3 font-semibold"
+            className="uppercase mt-8 py-3 px-4 rounded-lg font-semibold flex justify-center bg-blue-600 hover:bg-blue-700 transition-all duration-300 ease-in-out cursor-pointer"
           >
             Add Another Question
           </button>
 
           <button
             type="submit"
-            className="bg-teal-600 mt-8 uppercase rounded-md py-3 font-semibold"
+            className="uppercase mt-8 py-3 px-4 rounded-lg font-semibold flex justify-center bg-teal-600 hover:bg-teal-700 transition-all duration-300 ease-in-out cursor-pointer"
           >
             Create Quiz
           </button>

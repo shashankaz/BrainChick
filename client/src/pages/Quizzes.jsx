@@ -7,7 +7,9 @@ const Quizzes = () => {
   const { category: paramCategory } = useParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDifficulty, setSelectedDifficulty] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState(paramCategory?.toLowerCase() || "");
+  const [selectedCategory, setSelectedCategory] = useState(
+    paramCategory?.toLowerCase() || ""
+  );
   const [quizzes, setQuizzes] = useState([]);
   const [images, setImages] = useState({});
 
@@ -101,7 +103,9 @@ const Quizzes = () => {
               <option value="database">Database</option>
               <option value="cybersecurity">Cybersecurity</option>
               <option value="cloud computing">Cloud Computing</option>
-              <option value="artificial intelligence">Artificial Intelligence</option>
+              <option value="artificial intelligence">
+                Artificial Intelligence
+              </option>
               <option value="blockchain">Blockchain</option>
               <option value="networking">Networking</option>
             </select>
