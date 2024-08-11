@@ -38,45 +38,45 @@ const Home = () => {
           quizzes={quizzes}
           category="Web Development"
         />
-        <div className="mt-8">
+        <div className="my-6">
           <QuizSection
             title="Programming"
             quizzes={quizzes}
             category="Programming"
           />
         </div>
-        <div className="mt-8">
+        <div className="my-6">
           <QuizSection title="Database" quizzes={quizzes} category="Database" />
         </div>
-        <div className="mt-8">
+        <div className="my-6">
           <QuizSection
             title="Cybersecurity"
             quizzes={quizzes}
             category="Cybersecurity"
           />
         </div>
-        <div className="mt-8">
+        <div className="my-6">
           <QuizSection
             title="Cloud Computing"
             quizzes={quizzes}
             category="Cloud Computing"
           />
         </div>
-        <div className="mt-8">
+        <div className="my-6">
           <QuizSection
             title="Artificial Intelligence"
             quizzes={quizzes}
             category="Artificial Intelligence"
           />
         </div>
-        <div className="mt-8">
+        <div className="my-6">
           <QuizSection
             title="Blockchain"
             quizzes={quizzes}
             category="Blockchain"
           />
         </div>
-        <div className="mt-8">
+        <div className="my-6">
           <QuizSection
             title="Networking"
             quizzes={quizzes}

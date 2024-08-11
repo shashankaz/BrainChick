@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ProfileHero from "../components/ProfileHero";
 
@@ -12,81 +11,70 @@ const QuizForm = () => {
     questions: [{ question: "", options: ["", "", "", ""], correctAnswer: "" }],
   });
 
-  const [errors, setErrors] = useState({});
+  const [secretKey, setSecretKey] = useState("");
   const navigate = useNavigate();
+  const HARDCODED_SECRET_KEY = "mySecret123";
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormValues({
-      ...formValues,
+    setFormValues((prev) => ({
+      ...prev,
       [name]: value,
-    });
+    }));
   };
 
-  const handleQuestionChange = (index, e) => {
+  const handleQuestionChange = (qIndex, e) => {
     const { name, value } = e.target;
-    const newQuestions = [...formValues.questions];
-    newQuestions[index][name] = value;
-    setFormValues({ ...formValues, questions: newQuestions });
+    setFormValues((prev) => {
+      const questions = [...prev.questions];
+      questions[qIndex][name] = value;
+      return { ...prev, questions };
+    });
   };
 
   const handleOptionChange = (qIndex, oIndex, e) => {
     const { value } = e.target;
-    const newQuestions = [...formValues.questions];
-    newQuestions[qIndex].options[oIndex] = value;
-    setFormValues({ ...formValues, questions: newQuestions });
+    setFormValues((prev) => {
+      const questions = [...prev.questions];
+      questions[qIndex].options[oIndex] = value;
+      return { ...prev, questions };
+    });
   };
 
   const addQuestion = () => {
-    setFormValues({
-      ...formValues,
+    setFormValues((prev) => ({
+      ...prev,
       questions: [
-        ...formValues.questions,
+        ...prev.questions,
         { question: "", options: ["", "", "", ""], correctAnswer: "" },
       ],
-    });
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-    if (!formValues.title) newErrors.title = "Title is required";
-    if (!formValues.description)
-      newErrors.description = "Description is required";
-    if (!formValues.category) newErrors.category = "Category is required";
-    if (!formValues.difficulty) newErrors.difficulty = "Difficulty is required";
-
-    formValues.questions.forEach((question, qIndex) => {
-      if (!question.question)
-        newErrors[`question-${qIndex}`] = "Question is required";
-      question.options.forEach((option, oIndex) => {
-        if (!option)
-          newErrors[`option-${qIndex}-${oIndex}`] = "Option is required";
-      });
-      if (!question.correctAnswer)
-        newErrors[`correctAnswer-${qIndex}`] = "Correct answer is required";
-    });
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!validateForm()) {
+    if (secretKey !== HARDCODED_SECRET_KEY) {
+      alert("Invalid secret key! You cannot create a quiz.");
       return;
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:3000/api/quizzes",
-        formValues
-      );
-      console.log(response.data);
-      alert("Quiz created successfully!");
-      navigate("/"); // Redirect to another page if needed
+      const response = await fetch("http://localhost:3000/api/quizzes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formValues),
+      });
+      if (response.ok) {
+        alert("Quiz created successfully!");
+        navigate("/");
+      } else {
+        alert("Failed to create the quiz. Please try again.");
+      }
     } catch (error) {
-      console.error("There was an error creating the quiz!", error);
+      console.error("Error creating the quiz:", error);
       alert("Failed to create the quiz. Please try again.");
     }
   };
@@ -97,12 +85,12 @@ const QuizForm = () => {
         title="Create a Quiz"
         desc="Fill out the form below to create a new quiz."
       />
-      <div className="mx-32 my-10">
+      <div className="mx-4 my-10 sm:mx-8 md:mx-16 lg:mx-32">
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col mt-4 w-1/2 mx-auto"
+          className="flex flex-col mt-4 w-full md:w-2/3 lg:w-1/2 mx-auto"
         >
-          <label htmlFor="title">Quiz Title*</label>
+          <label htmlFor="title">Quiz Title</label>
           <input
             type="text"
             placeholder="Enter quiz title"
@@ -112,10 +100,9 @@ const QuizForm = () => {
             value={formValues.title}
             onChange={handleChange}
           />
-          {errors.title && <p className="text-red-600 mt-1">{errors.title}</p>}
 
           <label htmlFor="description" className="mt-4">
-            Description*
+            Description
           </label>
           <textarea
             placeholder="Enter quiz description"
@@ -126,12 +113,9 @@ const QuizForm = () => {
             value={formValues.description}
             onChange={handleChange}
           ></textarea>
-          {errors.description && (
-            <p className="text-red-600 mt-1">{errors.description}</p>
-          )}
 
           <label htmlFor="category" className="mt-4">
-            Category*
+            Category
           </label>
           <input
             type="text"
@@ -142,12 +126,9 @@ const QuizForm = () => {
             value={formValues.category}
             onChange={handleChange}
           />
-          {errors.category && (
-            <p className="text-red-600 mt-1">{errors.category}</p>
-          )}
 
           <label htmlFor="difficulty" className="mt-4">
-            Difficulty*
+            Difficulty
           </label>
           <select
             id="difficulty"
@@ -160,9 +141,6 @@ const QuizForm = () => {
             <option value="Intermediate">Intermediate</option>
             <option value="Hard">Hard</option>
           </select>
-          {errors.difficulty && (
-            <p className="text-red-600 mt-1">{errors.difficulty}</p>
-          )}
 
           <div className="mt-8">
             <h3 className="text-xl font-semibold">Questions:</h3>
@@ -172,7 +150,7 @@ const QuizForm = () => {
                 className="border border-gray-500 p-4 rounded-md mt-4 flex flex-col"
               >
                 <label htmlFor={`question-${qIndex}`}>
-                  Question {qIndex + 1}*
+                  Question {qIndex + 1}
                 </label>
                 <input
                   type="text"
@@ -183,16 +161,11 @@ const QuizForm = () => {
                   value={question.question}
                   onChange={(e) => handleQuestionChange(qIndex, e)}
                 />
-                {errors[`question-${qIndex}`] && (
-                  <p className="text-red-600 mt-1">
-                    {errors[`question-${qIndex}`]}
-                  </p>
-                )}
 
                 {question.options.map((option, oIndex) => (
                   <div key={oIndex} className="mt-4">
                     <label htmlFor={`option-${qIndex}-${oIndex}`}>
-                      Option {oIndex + 1}*
+                      Option {oIndex + 1}
                     </label>
                     <input
                       type="text"
@@ -202,16 +175,11 @@ const QuizForm = () => {
                       value={option}
                       onChange={(e) => handleOptionChange(qIndex, oIndex, e)}
                     />
-                    {errors[`option-${qIndex}-${oIndex}`] && (
-                      <p className="text-red-600 mt-1">
-                        {errors[`option-${qIndex}-${oIndex}`]}
-                      </p>
-                    )}
                   </div>
                 ))}
 
                 <label htmlFor={`correctAnswer-${qIndex}`} className="mt-4">
-                  Correct Answer*
+                  Correct Answer
                 </label>
                 <select
                   id={`correctAnswer-${qIndex}`}
@@ -227,14 +195,22 @@ const QuizForm = () => {
                     </option>
                   ))}
                 </select>
-                {errors[`correctAnswer-${qIndex}`] && (
-                  <p className="text-red-600 mt-1">
-                    {errors[`correctAnswer-${qIndex}`]}
-                  </p>
-                )}
               </div>
             ))}
           </div>
+
+          <label htmlFor="secretKey" className="mt-4">
+            Secret Key
+          </label>
+          <input
+            type="password"
+            placeholder="Enter secret key"
+            id="secretKey"
+            name="secretKey"
+            className="bg-transparent border border-gray-500 p-2 rounded-md mt-1 bg-white text-black"
+            value={secretKey}
+            onChange={(e) => setSecretKey(e.target.value)}
+          />
 
           <button
             type="button"

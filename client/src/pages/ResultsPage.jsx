@@ -98,7 +98,10 @@ const ResultsPage = () => {
             </div>
           ))}
         </div>
-        <Btn text="Back to Home" onClick={() => navigate("/")} />
+        <div className="flex gap-4">
+          <Btn text="Back to Home" onClick={() => navigate("/")} />
+          <Btn text="Leaderboard" onClick={() => navigate("/leaderboard")} />
+        </div>
       </div>
     </div>
   );

@@ -23,35 +23,35 @@ const Profile = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-900 text-white">
       {user ? (
         <div>
           <ProfileHero title={"Profile"} />
           <div className="my-10 mx-4 md:mx-16 lg:mx-32">
-            <table className="table-auto w-full border-collapse border border-gray-200">
+            <table className="table-auto w-full border-collapse bg-slate-800 rounded-lg overflow-hidden">
               <tbody>
                 <tr>
-                  <td className="border border-gray-300 p-2 sm:p-4 font-semibold">
+                  <td className="border-b border-slate-700 p-4 font-semibold text-teal-400">
                     Account Name
                   </td>
-                  <td className="border border-gray-300 p-2 sm:p-4">
+                  <td className="border-b border-slate-700 p-4">
                     {user.displayName}
                   </td>
                 </tr>
                 <tr>
-                  <td className="border border-gray-300 p-2 sm:p-4 font-semibold">
+                  <td className="border-b border-slate-700 p-4 font-semibold text-teal-400">
                     Email
                   </td>
-                  <td className="border border-gray-300 p-2 sm:p-4">
+                  <td className="border-b border-slate-700 p-4">
                     {user.email}
                   </td>
                 </tr>
                 <tr>
-                  <td className="border border-gray-300 p-2 sm:p-4 font-semibold">
+                  <td className="border-b border-slate-700 p-4 font-semibold text-teal-400">
                     Contact Number
                   </td>
-                  <td className="border border-gray-300 p-2 sm:p-4">
-                    {user.phoneNumber || "unavailable"}
+                  <td className="border-b border-slate-700 p-4">
+                    {user.phoneNumber || "Unavailable"}
                   </td>
                 </tr>
               </tbody>

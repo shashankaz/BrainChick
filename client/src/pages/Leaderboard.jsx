@@ -22,8 +22,6 @@ const Leaderboard = () => {
         const sortedScores = data.results
           .sort((a, b) => b.score - a.score)
           .slice(0, 10);
-
-        console.log(data);
         setScores(sortedScores);
       };
 
@@ -35,25 +33,30 @@ const Leaderboard = () => {
     <div className="min-h-screen">
       <ProfileHero title={"Leaderboard"} />
       <div className="mx-4 md:mx-16 lg:mx-32 my-10">
-        <div className="overflow-x-auto">
-          <table className="table-auto w-full border-collapse">
+        <div className="overflow-x-auto shadow-lg rounded-lg">
+          <table className="table-auto w-full border-collapse bg-slate-800 rounded-lg">
             <thead>
-              <tr className="text-left">
-                <th className="border border-gray-300 p-2 sm:p-4">Rank</th>
-                <th className="border border-gray-300 p-2 sm:p-4">Name</th>
-                <th className="border border-gray-300 p-2 sm:p-4">Score</th>
+              <tr className="text-left bg-slate-700 text-teal-400">
+                <th className="border-b border-slate-600 p-3 sm:p-4">Rank</th>
+                <th className="border-b border-slate-600 p-3 sm:p-4">Name</th>
+                <th className="border-b border-slate-600 p-3 sm:p-4">Score</th>
               </tr>
             </thead>
             <tbody>
               {scores.map((score, index) => (
-                <tr key={index}>
-                  <td className="border border-gray-300 p-2 sm:p-4">
+                <tr
+                  key={index}
+                  className={`hover:bg-slate-700 ${
+                    index % 2 === 0 ? "bg-slate-800" : "bg-slate-900"
+                  }`}
+                >
+                  <td className="border-b border-slate-600 p-3 sm:p-4">
                     {index + 1}
                   </td>
-                  <td className="border border-gray-300 p-2 sm:p-4">
+                  <td className="border-b border-slate-600 p-3 sm:p-4">
                     {score.name}
                   </td>
-                  <td className="border border-gray-300 p-2 sm:p-4">
+                  <td className="border-b border-slate-600 p-3 sm:p-4">
                     {score.score}
                   </td>
                 </tr>

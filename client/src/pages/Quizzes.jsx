@@ -74,7 +74,7 @@ const Quizzes = () => {
   });
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-900 text-white">
       <ProfileHero title={"Quizzes"} />
       <div className="mx-4 md:mx-16 lg:mx-32 my-10">
         <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
@@ -84,7 +84,7 @@ const Quizzes = () => {
               placeholder="Search by title"
               value={searchTerm}
               onChange={handleSearchChange}
-              className="p-2 w-full md:w-auto border border-gray-500 rounded-md text-black outline-none"
+              className="p-2 w-full md:w-auto border border-slate-700 rounded-md bg-slate-800 text-white placeholder-gray-400 outline-none transition-all duration-300 ease-in-out focus:ring-2 focus:ring-teal-500"
             />
             <Btn text="Clear" onClick={() => setSearchTerm("")} />
           </form>
@@ -93,7 +93,7 @@ const Quizzes = () => {
             <select
               value={selectedCategory}
               onChange={handleCategoryChange}
-              className="p-2 w-full md:w-auto border rounded-md border-gray-500 text-black outline-none"
+              className="p-2 w-full md:w-auto border rounded-md bg-slate-800 border-slate-700 text-white outline-none transition-all duration-300 ease-in-out focus:ring-2 focus:ring-teal-500"
             >
               <option value="">All Categories</option>
               <option value="web development">Web Development</option>
@@ -101,9 +101,7 @@ const Quizzes = () => {
               <option value="database">Database</option>
               <option value="cybersecurity">Cybersecurity</option>
               <option value="cloud computing">Cloud Computing</option>
-              <option value="artificial intelligence">
-                Artificial Intelligence
-              </option>
+              <option value="artificial intelligence">Artificial Intelligence</option>
               <option value="blockchain">Blockchain</option>
               <option value="networking">Networking</option>
             </select>
@@ -114,7 +112,7 @@ const Quizzes = () => {
             <select
               value={selectedDifficulty}
               onChange={handleDifficultyChange}
-              className="p-2 w-full md:w-auto border rounded-md border-gray-500 text-black outline-none"
+              className="p-2 w-full md:w-auto border rounded-md bg-slate-800 border-slate-700 text-white outline-none transition-all duration-300 ease-in-out focus:ring-2 focus:ring-teal-500"
             >
               <option value="">All Difficulties</option>
               <option value="easy">Easy</option>
@@ -125,7 +123,7 @@ const Quizzes = () => {
           </form>
         </div>
 
-        <div className="border border-gray-700 rounded-lg">
+        <div className="border border-slate-700 rounded-lg overflow-hidden">
           {filteredQuizzes.map((quiz) => (
             <BarCard
               key={quiz._id}
@@ -150,7 +148,7 @@ const Btn = ({ text, onClick }) => {
     <button
       type="button"
       onClick={onClick}
-      className="bg-teal-600 px-4 py-2 rounded-md w-20"
+      className="py-2 px-4 rounded-lg font-semibold flex justify-center bg-teal-600 hover:bg-teal-700 transition-all duration-300 ease-in-out cursor-pointer"
     >
       {text}
     </button>
