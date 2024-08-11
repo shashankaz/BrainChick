@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import ProfileHero from "../components/ProfileHero";
 import BarCard from "../components/BarCard";
 
 const Quizzes = () => {
+  const { category: paramCategory } = useParams();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedDifficulty, setSelectedDifficulty] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState(paramCategory?.toLowerCase() || "");
   const [quizzes, setQuizzes] = useState([]);
-  const [images, setImages] = useState({}); 
+  const [images, setImages] = useState({});
 
   useEffect(() => {
     const fetchQuizzes = async () => {
@@ -49,14 +52,25 @@ const Quizzes = () => {
   };
 
   const handleDifficultyChange = (e) => {
-    setSelectedDifficulty(e.target.value);
+    setSelectedDifficulty(e.target.value.toLowerCase());
+  };
+
+  const handleCategoryChange = (e) => {
+    setSelectedCategory(e.target.value.toLowerCase());
   };
 
   const filteredQuizzes = quizzes.filter((quiz) => {
-    const matchesSearch = quiz.title.toLowerCase().includes(searchTerm);
+    const quizTitle = quiz.title.toLowerCase();
+    const quizDifficulty = quiz.difficulty.toLowerCase();
+    const quizCategory = quiz.category.toLowerCase();
+
+    const matchesSearch = quizTitle.includes(searchTerm);
     const matchesDifficulty =
-      selectedDifficulty === "" || quiz.difficulty === selectedDifficulty;
-    return matchesSearch && matchesDifficulty;
+      selectedDifficulty === "" || quizDifficulty === selectedDifficulty;
+    const matchesCategory =
+      selectedCategory === "" || quizCategory === selectedCategory;
+
+    return matchesSearch && matchesDifficulty && matchesCategory;
   });
 
   return (
@@ -77,14 +91,35 @@ const Quizzes = () => {
 
           <form className="flex gap-2 w-full md:w-auto">
             <select
+              value={selectedCategory}
+              onChange={handleCategoryChange}
+              className="p-2 w-full md:w-auto border rounded-md border-gray-500 text-black outline-none"
+            >
+              <option value="">All Categories</option>
+              <option value="web development">Web Development</option>
+              <option value="programming">Programming</option>
+              <option value="database">Database</option>
+              <option value="cybersecurity">Cybersecurity</option>
+              <option value="cloud computing">Cloud Computing</option>
+              <option value="artificial intelligence">
+                Artificial Intelligence
+              </option>
+              <option value="blockchain">Blockchain</option>
+              <option value="networking">Networking</option>
+            </select>
+            <Btn text="Reset" onClick={() => setSelectedCategory("")} />
+          </form>
+
+          <form className="flex gap-2 w-full md:w-auto">
+            <select
               value={selectedDifficulty}
               onChange={handleDifficultyChange}
               className="p-2 w-full md:w-auto border rounded-md border-gray-500 text-black outline-none"
             >
               <option value="">All Difficulties</option>
-              <option value="Easy">Easy</option>
-              <option value="Intermediate">Intermediate</option>
-              <option value="Hard">Hard</option>
+              <option value="easy">Easy</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="hard">Hard</option>
             </select>
             <Btn text="Reset" onClick={() => setSelectedDifficulty("")} />
           </form>

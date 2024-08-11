@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Loading from "./components/Loading";
+import ScrollToTop from "./components/ScrollToTop";
 const Quizzes = lazy(() => import("./pages/Quizzes"));
 const QuizIntro = lazy(() => import("./pages/QuizIntro"));
 const QuizPage = lazy(() => import("./pages/QuizPage"));
@@ -27,6 +28,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/quizzes" element={<Quizzes />} />
+            <Route path="/quizzes/:category" element={<Quizzes />} />
             <Route path="/quiz/:quizId" element={<QuizIntro />} />
             <Route path="/quiz/:quizId/start" element={<QuizPage />} />
             <Route path="/create" element={<QuizForm />} />
@@ -40,6 +42,7 @@ const App = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
+          <ScrollToTop />
         </Router>
       </Suspense>
       <Analytics />

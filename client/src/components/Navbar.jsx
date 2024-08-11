@@ -34,20 +34,20 @@ const Navbar = () => {
                 <img
                   src={user.photoURL}
                   alt="profile"
-                  className="w-9 h-9 rounded-full"
+                  className="w-9 h-9 rounded-full object-cover"
                 />
               ) : (
                 <img
                   src="https://picsum.photos/100/100"
                   alt="profile"
-                  className="w-9 h-9 rounded-full"
+                  className="w-9 h-9 rounded-full object-cover"
                 />
               )}
             </Link>
           </div>
         </div>
       ) : (
-        <div className="flex justify-end w-48 gap-2 ml-3">
+        <div className="flex justify-end w-full md:w-52 gap-2 ml-3">
           <Link to={"/signin"}>
             <div className="uppercase border-2 p-1 sm:p-2 rounded-lg text-xs sm:text-sm font-semibold border-teal-600 text-teal-600 ">
               Sign In

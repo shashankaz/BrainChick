@@ -49,6 +49,8 @@ const QuizSection = ({ title, quizzes, category }) => {
 
   const filteredQuizzes = quizzes.filter((quiz) => quiz.category === category);
 
+  const lowerCaseCategory = category.toLowerCase();
+
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -59,9 +61,11 @@ const QuizSection = ({ title, quizzes, category }) => {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <div className="font-semibold hover:bg-slate-800 py-1 sm:py-2 px-2 sm:px-4 rounded-md cursor-pointer transition-all text-sm sm:text-base">
-            <Link to={"/quizzes"}>View All</Link>
-          </div>
+          <Link to={`/quizzes/${lowerCaseCategory}`}>
+            <div className="font-semibold hover:bg-slate-800 py-1 sm:py-2 px-2 sm:px-4 rounded-md cursor-pointer transition-all text-sm sm:text-base">
+              View All
+            </div>
+          </Link>
           <div
             className="bg-slate-700 p-1 sm:p-2 rounded-full text-sm cursor-pointer"
             onClick={scrollLeft}
