@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const resultSchema = new mongoose.Schema(
   {
+    name: String,
     quizId: Number,
     quizTitle: String,
     userAnswers: Object,

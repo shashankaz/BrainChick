@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import ProfileHero from "../components/ProfileHero";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase";
 
 const ResultsPage = () => {
   const { state } = useLocation();
   const { quiz, userAnswers } = state;
   const navigate = useNavigate();
   const [resultId, setResultId] = useState(null);
+
+  const [user] = useAuthState(auth);
 
   const calculateScore = () => {
     let score = 0;
@@ -30,6 +34,7 @@ const ResultsPage = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
+            name: user.displayName,
             quizId: quiz.id,
             quizTitle: quiz.title,
             userAnswers,

@@ -51,7 +51,7 @@ const Leaderboard = () => {
                     {index + 1}
                   </td>
                   <td className="border border-gray-300 p-2 sm:p-4">
-                    {score._id}
+                    {score.name}
                   </td>
                   <td className="border border-gray-300 p-2 sm:p-4">
                     {score.score}
