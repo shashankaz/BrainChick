@@ -72,6 +72,32 @@ const ResultsPage = () => {
             <strong>Result ID:</strong> {resultId}
           </p>
         )}
+        <div className="mt-6">
+          <h3 className="text-xl font-semibold mb-4">Your Answers:</h3>
+          {quiz.questions.map((question, index) => (
+            <div key={index} className="mb-6">
+              <p className="font-medium mb-2">
+                Q{index + 1}: {question.question}
+              </p>
+              <p className="text-sm">
+                <strong>Your Answer:</strong>{" "}
+                <span
+                  className={
+                    userAnswers[index] === question.correctAnswer
+                      ? "text-green-600"
+                      : "text-red-600"
+                  }
+                >
+                  {userAnswers[index]}
+                </span>
+              </p>
+              <p className="text-sm">
+                <strong>Correct Answer:</strong>{" "}
+                <span className="text-green-600">{question.correctAnswer}</span>
+              </p>
+            </div>
+          ))}
+        </div>
         <Btn text="Back to Home" onClick={() => navigate("/")} />
       </div>
     </div>

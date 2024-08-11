@@ -40,7 +40,7 @@ const Leaderboard = () => {
             <thead>
               <tr className="text-left">
                 <th className="border border-gray-300 p-2 sm:p-4">Rank</th>
-                <th className="border border-gray-300 p-2 sm:p-4">ID</th>
+                <th className="border border-gray-300 p-2 sm:p-4">Name</th>
                 <th className="border border-gray-300 p-2 sm:p-4">Score</th>
               </tr>
             </thead>

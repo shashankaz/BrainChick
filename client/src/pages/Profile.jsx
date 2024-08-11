@@ -18,6 +18,10 @@ const Profile = () => {
     auth.signOut();
   };
 
+  const handleEditProfile = () => {
+    navigate("/edit-profile");
+  };
+
   return (
     <div className="min-h-screen">
       {user ? (
@@ -53,7 +57,7 @@ const Profile = () => {
               </tbody>
             </table>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Btn text="Edit Profile" />
+              <Btn text="Edit Profile" onClick={handleEditProfile} />
               <Btn text="Logout" onClick={handleLogout} />
             </div>
           </div>
