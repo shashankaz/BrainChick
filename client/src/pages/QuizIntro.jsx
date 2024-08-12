@@ -5,7 +5,8 @@ import { auth } from "../firebase";
 import ProfileHero from "../components/ProfileHero";
 
 const QuizIntro = () => {
-  const [quizzes, setQuizzes] = useState({});
+  const [quiz, setQuiz] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { quizId } = useParams();
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
@@ -14,19 +15,21 @@ const QuizIntro = () => {
     if (!user) {
       navigate("/signin");
     } else {
-      const fetchQuizzes = async () => {
+      const fetchQuiz = async () => {
         try {
           const response = await fetch(
             `${import.meta.env.VITE_BACKEND_URL}/api/quizzes/${quizId}`
           );
           const data = await response.json();
-          setQuizzes(data.quiz);
+          setQuiz(data.quiz);
         } catch (error) {
-          console.error("Error fetching quizzes:", error);
+          console.error("Error fetching quiz:", error);
+        } finally {
+          setLoading(false);
         }
       };
 
-      fetchQuizzes();
+      fetchQuiz();
     }
   }, [quizId]);
 
@@ -34,9 +37,17 @@ const QuizIntro = () => {
     navigate(`/quiz/${quizId}/start`);
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-lg text-teal-400">
+        Loading...
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen">
-      <ProfileHero title={quizzes.title} desc={quizzes.description} />
+      <ProfileHero title={quiz.title} desc={quiz.description} />
       <div className="mx-4 md:mx-16 lg:mx-32 my-10">
         <div className="mb-6">
           <h3 className="text-lg md:text-xl font-semibold">

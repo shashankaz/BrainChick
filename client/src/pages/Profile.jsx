@@ -9,6 +9,7 @@ const Profile = () => {
   const [user] = useAuthState(auth);
   const [scores, setScores] = useState([]);
   const [activeTab, setActiveTab] = useState("info");
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!user) {
@@ -23,6 +24,8 @@ const Profile = () => {
           setScores(data.result);
         } catch (error) {
           console.error("Error fetching scores:", error);
+        } finally {
+          setLoading(false);
         }
       };
 
@@ -38,9 +41,17 @@ const Profile = () => {
     navigate("/edit-profile");
   };
 
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-screen text-teal-400">
+        Loading...
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-slate-900 text-white">
-      {user ? (
+      {user && (
         <div>
           <ProfileHero title="Profile" />
           <div className="my-10 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
@@ -107,55 +118,57 @@ const Profile = () => {
 
               {activeTab === "performance" && (
                 <div className="py-4">
-                  <table className="table-auto w-full">
-                    <thead>
-                      <tr className="bg-slate-700 text-teal-400">
-                        <th className="border-b border-slate-600 p-3 sm:p-4">
-                          No.
-                        </th>
-                        <th className="border-b border-slate-600 p-3 sm:p-4">
-                          Quiz Name
-                        </th>
-                        <th className="border-b border-slate-600 p-3 sm:p-4">
-                          Score
-                        </th>
-                        <th className="border-b border-slate-600 p-3 sm:p-4">
-                          Date
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {scores.map((score, index) => (
-                        <tr
-                          key={index}
-                          className={`hover:bg-slate-700 text-center ${
-                            index % 2 === 0 ? "bg-slate-800" : "bg-slate-900"
-                          }`}
-                        >
-                          <td className="border-b border-slate-600 p-3 sm:p-4">
-                            {index + 1}
-                          </td>
-                          <td className="border-b border-slate-600 p-3 sm:p-4">
-                            {score.quizTitle}
-                          </td>
-                          <td className="border-b border-slate-600 p-3 sm:p-4">
-                            {score.score}
-                          </td>
-                          <td className="border-b border-slate-600 p-3 sm:p-4">
-                            {new Date(score.createdAt).toLocaleDateString()}
-                          </td>
+                  {scores.length === 0 ? (
+                    <p className="text-center text-gray-400 mt-3">
+                      No performance data available.
+                    </p>
+                  ) : (
+                    <table className="table-auto w-full">
+                      <thead>
+                        <tr className="bg-slate-700 text-teal-400">
+                          <th className="border-b border-slate-600 p-3 sm:p-4">
+                            No.
+                          </th>
+                          <th className="border-b border-slate-600 p-3 sm:p-4">
+                            Quiz Name
+                          </th>
+                          <th className="border-b border-slate-600 p-3 sm:p-4">
+                            Score
+                          </th>
+                          <th className="border-b border-slate-600 p-3 sm:p-4">
+                            Date
+                          </th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody>
+                        {scores.map((score, index) => (
+                          <tr
+                            key={index}
+                            className={`hover:bg-slate-700 text-center ${
+                              index % 2 === 0 ? "bg-slate-800" : "bg-slate-900"
+                            }`}
+                          >
+                            <td className="border-b border-slate-600 p-3 sm:p-4">
+                              {index + 1}
+                            </td>
+                            <td className="border-b border-slate-600 p-3 sm:p-4">
+                              {score.quizTitle}
+                            </td>
+                            <td className="border-b border-slate-600 p-3 sm:p-4">
+                              {score.score}
+                            </td>
+                            <td className="border-b border-slate-600 p-3 sm:p-4">
+                              {new Date(score.createdAt).toLocaleDateString()}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  )}
                 </div>
               )}
             </div>
           </div>
-        </div>
-      ) : (
-        <div className="flex items-center justify-center h-screen">
-          Loading...
         </div>
       )}
     </div>

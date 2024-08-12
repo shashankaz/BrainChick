@@ -11,6 +11,7 @@ const Quizzes = () => {
     paramCategory?.toLowerCase() || ""
   );
   const [quizzes, setQuizzes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchQuizzes = async () => {
@@ -22,6 +23,8 @@ const Quizzes = () => {
         setQuizzes(data.quizzes);
       } catch (error) {
         console.error("Error fetching quizzes:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -105,19 +108,28 @@ const Quizzes = () => {
             <Btn text="Reset" onClick={() => setSelectedDifficulty("")} />
           </form>
         </div>
-
-        <div className="border border-slate-700 rounded-lg overflow-hidden">
-          {filteredQuizzes.map((quiz) => (
-            <BarCard
-              key={quiz._id}
-              id={quiz._id}
-              title={quiz.title}
-              description={quiz.description}
-              category={quiz.category}
-              difficulty={quiz.difficulty}
-            />
-          ))}
-        </div>
+        {loading ? (
+          <div className="flex items-center justify-center">
+            <p className="text-teal-400 text-xl mt-10">Loading...</p>
+          </div>
+        ) : filteredQuizzes.length === 0 ? (
+          <div className="flex items-center justify-center">
+            <p className="text-teal-400 text-xl mt-10">No quizzes found.</p>
+          </div>
+        ) : (
+          <div className="border border-slate-700 rounded-lg overflow-hidden">
+            {filteredQuizzes.map((quiz) => (
+              <BarCard
+                key={quiz._id}
+                id={quiz._id}
+                title={quiz.title}
+                description={quiz.description}
+                category={quiz.category}
+                difficulty={quiz.difficulty}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

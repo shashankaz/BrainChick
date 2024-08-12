@@ -5,6 +5,7 @@ import ProfileHero from "../components/ProfileHero";
 const ResultDetailPage = () => {
   const { resultId } = useParams();
   const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,6 +18,8 @@ const ResultDetailPage = () => {
         setResult(data.result);
       } catch (error) {
         console.error("Error fetching result:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -25,8 +28,8 @@ const ResultDetailPage = () => {
 
   if (!result) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-center text-lg">
-        Result not found
+      <div className="min-h-screen flex items-center justify-center text-lg text-teal-400">
+        Result not found.
       </div>
     );
   }
@@ -37,13 +40,20 @@ const ResultDetailPage = () => {
         title={`Results for ${result.quizTitle} of ${result.name}`}
       />
       <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 mt-10 mb-20">
-        <p className="text-lg mb-4">
-          {result.name} scored {result.score} out of {result.totalQuestions}.
-        </p>
-        <p className="text-sm text-gray-600 mb-4 break-words">
-          <strong>Result ID:</strong> {resultId}
-        </p>
-        <Btn text="Back to Home" onClick={() => navigate("/")} />
+        {loading ? (
+          <p className="text-teal-400 text-xl mt-10">Loading...</p>
+        ) : (
+          <>
+            <p className="text-lg mb-4">
+              {result.name} scored {result.score} out of {result.totalQuestions}
+              .
+            </p>
+            <p className="text-sm text-gray-600 mb-4 break-words">
+              <strong>Result ID:</strong> {resultId}
+            </p>
+            <Btn text="Back to Home" onClick={() => navigate("/")} />
+          </>
+        )}
       </div>
     </div>
   );

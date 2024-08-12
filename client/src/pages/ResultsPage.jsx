@@ -10,6 +10,8 @@ const ResultsPage = () => {
   const navigate = useNavigate();
   const [resultId, setResultId] = useState(null);
   const [user] = useAuthState(auth);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const [copySuccess, setCopySuccess] = useState("");
 
   const calculateScore = () => {
@@ -50,10 +52,12 @@ const ResultsPage = () => {
         const resultId = resultData.resultId;
         setResultId(resultId);
       } else {
-        console.error("Failed to save result");
+        setError("Failed to save result.");
       }
     } catch (error) {
-      console.error("Error saving result:", error);
+      setError("Error saving result. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -75,47 +79,60 @@ const ResultsPage = () => {
     <div className="min-h-screen">
       <ProfileHero title="Results" />
       <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 my-10">
-        <p className="text-lg mb-4">
-          You scored {score} out of {quiz.questions.length}.
-        </p>
-        {resultId && (
-          <p className="text-sm text-gray-600 mb-4 break-words">
-            <strong>Result ID:</strong> {resultId}
-          </p>
-        )}
-        <div className="mt-6">
-          <h3 className="text-xl font-semibold mb-4">Your Answers:</h3>
-          {quiz.questions.map((question, index) => (
-            <div key={index} className="mb-6">
-              <p className="font-medium mb-2">
-                Q{index + 1}: {question.question}
+        {loading ? (
+          <p className="text-teal-400 text-xl">Saving your result...</p>
+        ) : error ? (
+          <p className="text-red-500 text-xl">{error}</p>
+        ) : (
+          <>
+            <p className="text-lg mb-4">
+              You scored {score} out of {quiz.questions.length}.
+            </p>
+            {resultId && (
+              <p className="text-sm text-gray-600 mb-4 break-words">
+                <strong>Result ID:</strong> {resultId}
               </p>
-              <p className="text-sm">
-                <strong>Your Answer:</strong>{" "}
-                <span
-                  className={
-                    userAnswers[index] === question.correctAnswer
-                      ? "text-green-600"
-                      : "text-red-600"
-                  }
-                >
-                  {userAnswers[index]}
-                </span>
-              </p>
-              <p className="text-sm">
-                <strong>Correct Answer:</strong>{" "}
-                <span className="text-green-600">{question.correctAnswer}</span>
-              </p>
+            )}
+            <div className="mt-6">
+              <h3 className="text-xl font-semibold mb-4">Your Answers:</h3>
+              {quiz.questions.map((question, index) => (
+                <div key={index} className="mb-6">
+                  <p className="font-medium mb-2">
+                    Q{index + 1}: {question.question}
+                  </p>
+                  <p className="text-sm">
+                    <strong>Your Answer:</strong>{" "}
+                    <span
+                      className={
+                        userAnswers[index] === question.correctAnswer
+                          ? "text-green-600"
+                          : "text-red-600"
+                      }
+                    >
+                      {userAnswers[index]}
+                    </span>
+                  </p>
+                  <p className="text-sm">
+                    <strong>Correct Answer:</strong>{" "}
+                    <span className="text-green-600">
+                      {question.correctAnswer}
+                    </span>
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <div className="flex gap-4 flex-wrap">
-          <Btn text="Back to Home" onClick={() => navigate("/")} />
-          <Btn text="Leaderboard" onClick={() => navigate("/leaderboard")} />
-          {resultId && (
-            <Btn text={copySuccess || "Share"} onClick={handleShareClick} />
-          )}
-        </div>
+            <div className="flex gap-4 flex-wrap">
+              <Btn text="Back to Home" onClick={() => navigate("/")} />
+              <Btn
+                text="Leaderboard"
+                onClick={() => navigate("/leaderboard")}
+              />
+              {resultId && (
+                <Btn text={copySuccess || "Share"} onClick={handleShareClick} />
+              )}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

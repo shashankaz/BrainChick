@@ -7,6 +7,7 @@ import ProfileHero from "../components/ProfileHero";
 const QuizPage = () => {
   const [quiz, setQuiz] = useState(null);
   const [userAnswers, setUserAnswers] = useState({});
+  const [loading, setLoading] = useState(true);
   const { quizId } = useParams();
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
@@ -24,6 +25,8 @@ const QuizPage = () => {
           setQuiz(data.quiz);
         } catch (err) {
           console.error("Error fetching quiz:", err);
+        } finally {
+          setLoading(false);
         }
       };
 
@@ -42,8 +45,20 @@ const QuizPage = () => {
     navigate("/results", { state: { quiz, userAnswers } });
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-teal-400 text-xl">Loading...</p>
+      </div>
+    );
+  }
+
   if (!quiz) {
-    return <div>Quiz not found.</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-teal-400 text-xl">Quiz not found.</p>
+      </div>
+    );
   }
 
   return (
@@ -88,7 +103,7 @@ const Btn = ({ text, onClick }) => (
     type="button"
     onClick={onClick}
     className="uppercase py-2 px-4 rounded-lg font-semibold flex justify-center bg-teal-600 hover:bg-teal-700 transition-all duration-300 ease-in-out cursor-pointer"
-    >
+  >
     {text}
   </button>
 );
