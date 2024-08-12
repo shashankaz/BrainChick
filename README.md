@@ -21,11 +21,16 @@ This project is a MERN stack-based online quiz application that allows users to 
 
 ## Features
 
-- **Quiz Functionality**: Users can take quizzes after log in.
-- **Results Page**: Users can view their quiz results immediately after completing a quiz.
-- **User Authentication**: Users can sign up and log in using Firebase authentication. Google sign-up is also available.
-- **Responsive Design**: The application is fully responsive and works on various screen sizes.
-- **Persistent Data**: Quiz results are saved to MongoDB and can be retrieved by their unique result ID.
+- **Home Page**: Displays a curated list of available quizzes, allowing users to browse and select quizzes based on their interests. Quizzes are categorized for easy navigation.
+- **Quiz Browsing**: Users can explore all quizzes in the Quizzes Section, with advanced filtering and sorting options to find quizzes that match their preferences.
+- **Quiz Participation**: Registered users can take quizzes, with real-time feedback and progress tracking. Quizzes are dynamically loaded to ensure a seamless experience.
+- **Instant Results**: After completing a quiz, users can instantly view their results, including detailed answers and explanations. A share button allows users to copy the result URL and share it with others.
+- **Leaderboard**: A global leaderboard showcases top performers, encouraging competition among users. Users can see their rankings and compare their scores with others.
+- **User Authentication**: Secure sign-up and login options using Firebase Authentication, with support for traditional email/password accounts and Google sign-in for quick access.
+- **User Profile Management**: Users can view and edit their profile information, including updating their personal details and password. The profile page also displays the user’s quiz history and past results.
+- **Responsive and Adaptive Design**: The application is fully responsive, providing an optimal user experience across devices, including desktops, tablets, and smartphones.
+- **Data Persistence**: All quiz results are securely stored in MongoDB, ensuring that users can retrieve their results at any time via a unique result ID.
+- **Explore as Guest**: Users can explore available quizzes and try out the app's features without needing to create an account, encouraging engagement before committing to sign up.
 
 ## Tech Stack
 
@@ -114,4 +119,6 @@ The application should now be running on `http://localhost:5173` and the backend
 ### Results
 
 - `POST /api/results`: Submit quiz results
-- `GET /api/results/:id`: Get quiz results by ID
+- `GET /api/results`: Get all quiz results
+- `GET /api/results/id/:id`: Get quiz results by ID
+- `GET /api/results/user/:email`: Get quiz results by Email
