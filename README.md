@@ -1,6 +1,6 @@
 # Online Quiz Application
 
-This project is a MERN stack-based online quiz application that allows users to take quizzes and view their results. The application features a dynamic and interactive user interface powered by React and a backend built with Node.js, Express, and MongoDB. The application also integrates Firebase authentication for user registration and login, with the option to sign up using Google.
+This project is a comprehensive online quiz application built using the MERN stack, designed to offer users an engaging platform for taking quizzes and viewing results. The application features a dynamic and interactive user interface developed with React, while the backend is powered by Node.js, Express, and MongoDB to handle data management and server operations. Firebase authentication is integrated to provide secure user registration and login, including the option to sign up with Google for added convenience.
 
 ## Table of Contents
 
