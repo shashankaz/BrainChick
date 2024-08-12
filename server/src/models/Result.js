@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const resultSchema = new mongoose.Schema(
   {
     name: String,
+    email: String,
     quizId: Number,
     quizTitle: String,
     userAnswers: Object,

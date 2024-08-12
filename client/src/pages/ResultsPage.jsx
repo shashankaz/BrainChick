@@ -35,6 +35,7 @@ const ResultsPage = () => {
           },
           body: JSON.stringify({
             name: user.displayName,
+            email: user.email,
             quizId: quiz.id,
             quizTitle: quiz.title,
             userAnswers,

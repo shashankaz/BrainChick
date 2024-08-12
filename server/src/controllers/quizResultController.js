@@ -43,3 +43,22 @@ export const getQuizResultById = async (req, res) => {
     handleErrors(res, error);
   }
 };
+
+export const getQuizResultByEmail = async (req, res) => {
+  try {
+    const result = await Result.find({ email: req.params.email });
+
+    if (!result) {
+      return res
+        .status(404)
+        .json({ success: "true", message: "Result not found" });
+    }
+
+    res.status(200).json({
+      success: "true",
+      result,
+    });
+  } catch (error) {
+    handleErrors(res, error);
+  }
+};
