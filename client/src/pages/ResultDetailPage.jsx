@@ -11,10 +11,10 @@ const ResultDetailPage = () => {
     const fetchResult = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_BACKEND_URL}/api/results/${resultId}`
+          `${import.meta.env.VITE_BACKEND_URL}/api/results/id/${resultId}`
         );
         const data = await response.json();
-        setResult(data);
+        setResult(data.result);
       } catch (error) {
         console.error("Error fetching result:", error);
       }
@@ -32,11 +32,13 @@ const ResultDetailPage = () => {
   }
 
   return (
-    <div className="min-h-screen">
-      <ProfileHero title={`Results for ${result.quizTitle}`} />
-      <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 my-10">
+    <div className="md:min-h-screen">
+      <ProfileHero
+        title={`Results for ${result.quizTitle} of ${result.name}`}
+      />
+      <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-32 mt-10 mb-20">
         <p className="text-lg mb-4">
-          You scored {result.score} out of {result.totalQuestions}.
+          {result.name} scored {result.score} out of {result.totalQuestions}.
         </p>
         <p className="text-sm text-gray-600 mb-4 break-words">
           <strong>Result ID:</strong> {resultId}

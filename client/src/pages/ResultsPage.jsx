@@ -9,8 +9,8 @@ const ResultsPage = () => {
   const { quiz, userAnswers } = state;
   const navigate = useNavigate();
   const [resultId, setResultId] = useState(null);
-
   const [user] = useAuthState(auth);
+  const [copySuccess, setCopySuccess] = useState("");
 
   const calculateScore = () => {
     let score = 0;
@@ -57,6 +57,16 @@ const ResultsPage = () => {
     }
   };
 
+  const handleShareClick = () => {
+    if (resultId) {
+      const shareUrl = `${window.location.origin}/results/${resultId}`;
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        setCopySuccess("Link copied!");
+        setTimeout(() => setCopySuccess(""), 3000);
+      });
+    }
+  };
+
   useEffect(() => {
     saveResultToMongoDB();
   }, []);
@@ -99,9 +109,12 @@ const ResultsPage = () => {
             </div>
           ))}
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap">
           <Btn text="Back to Home" onClick={() => navigate("/")} />
           <Btn text="Leaderboard" onClick={() => navigate("/leaderboard")} />
+          {resultId && (
+            <Btn text={copySuccess || "Share"} onClick={handleShareClick} />
+          )}
         </div>
       </div>
     </div>
@@ -114,7 +127,7 @@ const Btn = ({ text, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="uppercase py-2 px-4 rounded-lg font-semibold flex justify-center bg-teal-600 hover:bg-teal-700 transition-all duration-300 ease-in-out cursor-pointer"
+      className="uppercase py-2 px-4 rounded-lg text-sm sm:text-base font-semibold flex justify-center bg-teal-600 hover:bg-teal-700 transition-all duration-300 ease-in-out cursor-pointer"
     >
       {text}
     </button>
