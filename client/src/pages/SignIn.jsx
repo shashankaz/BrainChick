@@ -40,7 +40,7 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-10">
+    <div className="md:min-h-screen flex items-center justify-center px-4 py-10 sm:py-20">
       <div className="w-full max-w-lg bg-slate-800 rounded-lg p-8">
         <h1 className="text-3xl font-bold text-center text-white">Sign In</h1>
         <p className="mt-4 text-center text-gray-400">

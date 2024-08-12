@@ -11,7 +11,6 @@ const Quizzes = () => {
     paramCategory?.toLowerCase() || ""
   );
   const [quizzes, setQuizzes] = useState([]);
-  const [images, setImages] = useState({});
 
   useEffect(() => {
     const fetchQuizzes = async () => {
@@ -21,33 +20,13 @@ const Quizzes = () => {
         );
         const data = await response.json();
         setQuizzes(data.quizzes);
-
-        const imagePromises = data.quizzes.map((quiz) => fetchRandomImage());
-
-        const imageResults = await Promise.all(imagePromises);
-        const imageMap = imageResults.reduce((acc, img, index) => {
-          acc[data.quizzes[index]._id] = img;
-          return acc;
-        }, {});
-
-        setImages(imageMap);
       } catch (error) {
-        console.error("Error fetching quizzes or images:", error);
+        console.error("Error fetching quizzes:", error);
       }
     };
 
     fetchQuizzes();
   }, []);
-
-  const fetchRandomImage = async () => {
-    try {
-      const response = await fetch(`https://picsum.photos/200/300`);
-      return response.url;
-    } catch (error) {
-      console.error("Error fetching image:", error);
-      return ""; // Return an empty string or a placeholder image URL in case of error
-    }
-  };
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value.toLowerCase());
@@ -79,7 +58,7 @@ const Quizzes = () => {
     <div className="min-h-screen bg-slate-900 text-white">
       <ProfileHero title={"Quizzes"} />
       <div className="mx-4 md:mx-16 lg:mx-32 my-10">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+        <div className="flex flex-col md:flex-row flex-wrap justify-between items-center mb-8 gap-4">
           <form className="flex gap-2 w-full md:w-auto">
             <input
               type="text"
@@ -136,7 +115,6 @@ const Quizzes = () => {
               description={quiz.description}
               category={quiz.category}
               difficulty={quiz.difficulty}
-              imageUrl={images[quiz._id]} // Pass the image URL to BarCard
             />
           ))}
         </div>

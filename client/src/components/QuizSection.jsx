@@ -1,43 +1,10 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import Card from "./Card";
 import { Link } from "react-router-dom";
 
 const QuizSection = ({ title, quizzes, category }) => {
   const quizContainerRef = useRef(null);
-  const [images, setImages] = useState({});
-
-  useEffect(() => {
-    const fetchImages = async () => {
-      // First, filter the quizzes by category
-      const filteredQuizzes = quizzes.filter(
-        (quiz) => quiz.category === category
-      );
-
-      // Then fetch images for each filtered quiz
-      const imagePromises = filteredQuizzes.map(() => fetchRandomImage());
-
-      const imageResults = await Promise.all(imagePromises);
-      const imageMap = imageResults.reduce((acc, img, index) => {
-        acc[filteredQuizzes[index]._id] = img;
-        return acc;
-      }, {});
-
-      setImages(imageMap);
-    };
-
-    fetchImages();
-  }, [quizzes, category]);
-
-  const fetchRandomImage = async () => {
-    try {
-      const response = await fetch(`https://picsum.photos/200/300`);
-      return response.url;
-    } catch (error) {
-      console.error("Error fetching image:", error);
-      return "";
-    }
-  };
 
   const scrollLeft = () => {
     quizContainerRef.current.scrollBy({ left: -200, behavior: "smooth" });
@@ -91,7 +58,6 @@ const QuizSection = ({ title, quizzes, category }) => {
               key={quiz._id}
               title={quiz.title}
               difficulty={quiz.difficulty}
-              imageUrl={images[quiz._id]}
             />
           ))}
         </div>
