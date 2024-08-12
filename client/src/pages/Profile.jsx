@@ -43,7 +43,7 @@ const Profile = () => {
       {user ? (
         <div>
           <ProfileHero title="Profile" />
-          <div className="my-10 mx-4 md:mx-16 lg:mx-32">
+          <div className="my-10 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
             <div className="bg-slate-800 rounded-lg shadow-lg p-4">
               <div className="flex border-b border-slate-700">
                 <button
@@ -119,13 +119,16 @@ const Profile = () => {
                         <th className="border-b border-slate-600 p-3 sm:p-4">
                           Score
                         </th>
+                        <th className="border-b border-slate-600 p-3 sm:p-4">
+                          Date
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
                       {scores.map((score, index) => (
                         <tr
                           key={index}
-                          className={`hover:bg-slate-700 ${
+                          className={`hover:bg-slate-700 text-center ${
                             index % 2 === 0 ? "bg-slate-800" : "bg-slate-900"
                           }`}
                         >
@@ -137,6 +140,9 @@ const Profile = () => {
                           </td>
                           <td className="border-b border-slate-600 p-3 sm:p-4">
                             {score.score}
+                          </td>
+                          <td className="border-b border-slate-600 p-3 sm:p-4">
+                            {new Date(score.createdAt).toLocaleDateString()}
                           </td>
                         </tr>
                       ))}

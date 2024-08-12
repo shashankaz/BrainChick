@@ -36,7 +36,7 @@ const Leaderboard = () => {
         <div className="overflow-x-auto shadow-lg rounded-lg">
           <table className="table-auto w-full border-collapse bg-slate-800 rounded-lg">
             <thead>
-              <tr className="text-left bg-slate-700 text-teal-400">
+              <tr className="bg-slate-700 text-teal-400">
                 <th className="border-b border-slate-600 p-3 sm:p-4">Rank</th>
                 <th className="border-b border-slate-600 p-3 sm:p-4">Name</th>
                 <th className="border-b border-slate-600 p-3 sm:p-4">Score</th>
@@ -46,7 +46,7 @@ const Leaderboard = () => {
               {scores.map((score, index) => (
                 <tr
                   key={index}
-                  className={`hover:bg-slate-700 ${
+                  className={`hover:bg-slate-700 text-center ${
                     index % 2 === 0 ? "bg-slate-800" : "bg-slate-900"
                   }`}
                 >
