@@ -7,7 +7,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, googleProvider } from "../firebase";
+import { auth, googleProvider, githubProvider } from "../firebase";
 
 const SignUp = () => {
   const {
@@ -45,6 +45,15 @@ const SignUp = () => {
   const handleGoogleSignUp = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
+      navigate("/");
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
+  const handleGitHubSignUp = async () => {
+    try {
+      await signInWithPopup(auth, githubProvider);
       navigate("/");
     } catch (error) {
       console.error(error.message);
@@ -154,6 +163,13 @@ const SignUp = () => {
           className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md py-3 transition"
         >
           Continue with Google
+        </button>
+
+        <button
+          onClick={handleGitHubSignUp}
+          className="w-full mt-4 bg-zinc-800 hover:bg-zinc-900 text-white font-semibold rounded-md py-3 transition"
+        >
+          Continue with GitHub
         </button>
 
         <p className="mt-6 text-center text-gray-400">

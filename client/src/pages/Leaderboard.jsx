@@ -70,7 +70,7 @@ const Leaderboard = () => {
                       {index + 1}
                     </td>
                     <td className="border-b border-slate-600 p-3 sm:p-4">
-                      {score.name}
+                      {score.name || "Anonymous"}
                     </td>
                     <td className="border-b border-slate-600 p-3 sm:p-4">
                       {score.score}

@@ -88,7 +88,7 @@ const Profile = () => {
                           Account Name
                         </td>
                         <td className="border-b border-slate-700 p-4">
-                          {user.displayName}
+                          {user.displayName || "Unavailable"}
                         </td>
                       </tr>
                       <tr>
