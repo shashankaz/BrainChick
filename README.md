@@ -1,6 +1,6 @@
 # Online Quiz Application
 
-This project is a comprehensive online quiz application built using the MERN stack, designed to offer users an engaging platform for taking quizzes and viewing results. The application features a dynamic and interactive user interface developed with React, while the backend is powered by Node.js, Express, and MongoDB to handle data management and server operations. Firebase authentication is integrated to provide secure user registration and login, including the option to sign up with Google for added convenience.
+This project is a comprehensive online quiz application built using the MERN stack, designed to offer users an engaging platform for taking quizzes and viewing results. The application features a dynamic and interactive user interface developed with React, while the backend is powered by Node.js, Express, and MongoDB to handle data management and server operations. Firebase authentication is integrated to provide secure user registration and login, including the option to sign up with Google or GitHub for added convenience.
 
 ## Table of Contents
 
@@ -26,7 +26,7 @@ This project is a comprehensive online quiz application built using the MERN sta
 - **Quiz Participation**: Registered users can take quizzes, with real-time feedback and progress tracking. Quizzes are dynamically loaded to ensure a seamless experience.
 - **Instant Results**: After completing a quiz, users can instantly view their results, including answers. A share button allows users to copy the result URL and share it with others.
 - **Leaderboard**: A global leaderboard showcases top performers, encouraging competition among users. Users can see their rankings and compare their scores with others.
-- **User Authentication**: Secure sign-up and login options using Firebase Authentication, with support for traditional email/password accounts and Google sign-in for quick access.
+- **User Authentication**: Secure sign-up and login options using Firebase Authentication, with support for traditional email/password accounts, Google sign-in, and GitHub sign-in for quick access.
 - **User Profile Management**: Users can view and edit their profile information, including updating their personal details. The profile page also displays the user’s quiz history and past results.
 - **Responsive and Adaptive Design**: The application is fully responsive, providing an optimal user experience across devices, including desktops, tablets, and smartphones.
 - **Data Persistence**: All quiz results are securely stored in MongoDB, ensuring that users can retrieve their results at any time via a unique result ID.
@@ -36,7 +36,7 @@ This project is a comprehensive online quiz application built using the MERN sta
 
 - **Frontend**: React, Tailwind CSS, React Router
 - **Backend**: Node.js, Express, MongoDB
-- **Authentication**: Firebase Authentication
+- **Authentication**: Firebase Authentication (Email/Password, Google, GitHub)
 - **Deployment**: Vercel
 
 ## Installation
